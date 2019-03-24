@@ -1,0 +1,227 @@
+{
+	"001": {
+		"enemy": {
+			"name": "Rat",
+			"frames": [223, 241],
+			"health": 60
+		},
+		"questions": [
+			{
+				"quantity": 8,
+				"first_operand_range": [2, 5],
+				"second_operand_range": [2, 5],
+				"operator": "+"
+			},
+			{
+				"quantity": 2,
+				"first_operand_range": [5, 7],
+				"second_operand_range": [5, 7],
+				"operator": "+"
+			}
+		]
+	},
+	"002": {
+		"enemy": {
+			"name": "Chien",
+			"frames": [228, 246],
+			"health": 64
+		},
+		"questions": [
+			{
+				"quantity": 8,
+				"first_operand_range": [3, 6],
+				"second_operand_range": [3, 6],
+				"operator": "+"
+			},
+			{
+				"quantity": 2,
+				"first_operand_range": [5, 8],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			}
+		]
+	},
+	"003": {
+		"enemy": {
+			"name": "Cobra",
+			"frames": [225, 243],
+			"health": 70
+		},
+		"questions": [
+			{
+				"quantity": 3,
+				"first_operand_range": [3, 6],
+				"second_operand_range": [3, 6],
+				"operator": "+"
+			},
+			{
+				"quantity": 7,
+				"first_operand_range": [5, 8],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			}
+		]
+	},
+	"004": {
+		"enemy": {
+			"name": "Slime",
+			"frames": [216, 234],
+			"health": 77
+		},
+		"questions": [
+			{
+				"quantity": 3,
+				"first_operand_range": [3, 6],
+				"second_operand_range": [3, 6],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [5, 8],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 3,
+				"first_operand_range": [6, 8],
+				"second_operand_range": [3, 5],
+				"operator": "-"
+			}
+		]
+	},
+	"005": {
+		"enemy": {
+			"name": "Fantôme",
+			"frames": [294, 312],
+			"health": 85
+		},
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [3, 6],
+				"second_operand_range": [3, 6],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [5, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [6, 8],
+				"second_operand_range": [3, 5],
+				"operator": "-"
+			}
+		]
+	},
+	"006": {
+		"enemy": {
+			"name": "Squelette",
+			"frames": [290, 308],
+			"health": 90
+		},
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [3, 6],
+				"second_operand_range": [3, 6],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [5, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [6, 8],
+				"second_operand_range": [3, 5],
+				"operator": "-"
+			}
+		]
+	},
+	"007": {
+		"enemy": {
+			"name": "Ours",
+			"frames": [332, 350],
+			"health": 92
+		},
+		"questions": [
+			{
+				"quantity": 4,
+				"first_operand_range": [5, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [6, 8],
+				"second_operand_range": [3, 5],
+				"operator": "-"
+			},
+			{
+				"quantity": 2,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	"008": {
+		"enemy": {
+			"name": "Scorpion",
+			"frames": [335, 353],
+			"health": 94
+		},
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [5, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [6, 8],
+				"second_operand_range": [3, 5],
+				"operator": "-"
+			},
+			{
+				"quantity": 4,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	"009": {
+		"enemy": {
+			"name": "Chauve-Souris",
+			"frames": [218, 236],
+			"health": 96
+		},
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	}
+}
