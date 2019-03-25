@@ -278,6 +278,15 @@ class MainScene extends Phaser.Scene {
                 }
             }
 
+            /*
+                @TODO:
+                Determine the rating with :
+                    - Time remaining
+                    - Combo
+                    - Set a score on 100.
+
+            */
+
             savegame.levels[this.config.levelID]['tries']++;
             savegame.levels[this.config.levelID]['stars'] = 1;
 

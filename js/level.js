@@ -18,22 +18,26 @@ class Level {
 					answer: 0
 				};
 
-				question.text = question.first_operand + " " + question.operator + " " + question.second_operand;
-
 				switch (question.operator) {
 					case "+":
 						question.answer = question.first_operand + question.second_operand;
 						break;
+					case "-":
+						/* Swap operands to prevent negative answer */
+						if (question.first_operand < question.second_operand) {
+							let swap = question.second_operand;
+							question.second_operand = question.first_operand;
+							question.first_operand = swap;
+						}
+						question.answer = question.first_operand - question.second_operand;
+						break;
 				}
-				
-				let already_exists = false;
-				this.questions.forEach(function(single_question) {
-					if (single_question.text == question.text) {
-						already_exists = true;
-					}
-				});
 
-				if (!already_exists) {
+				/* Set the question TEXT */
+				question.text = question.first_operand + " " + question.operator + " " + question.second_operand;
+				
+				/* Only add this question if it's unique */
+				if ( this.questions.filter(single_question => single_question.text == question.text).length == 0 ) {
 					this.questions.push(question);
 					current_quantity++;
 				}

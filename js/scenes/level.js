@@ -25,7 +25,7 @@ class LevelScene extends Phaser.Scene {
                 } else {
                     this.enemy = new Unit(this, this.cache.json.get('levels')[button.levelID]);
                     this.enemy.x = button.x + ((100 - (this.enemy.width * this.enemy.scaleX)) / 2);
-                    this.enemy.y = 4;
+                    this.enemy.y = button.y + 4;
                     this.add.existing(this.enemy);
                 }
 
