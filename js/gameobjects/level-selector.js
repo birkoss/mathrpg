@@ -1,6 +1,6 @@
 class LevelSelector extends Phaser.GameObjects.Container {
  
-    constructor(scene, levelID) {
+    constructor(scene, levelID, levelsData, savegame) {
         super(scene, 100, 100);
 
         this.isPressed = this.isDisabled = false;
@@ -12,22 +12,32 @@ class LevelSelector extends Phaser.GameObjects.Container {
             this.levelID = "0" + this.levelID;
         }
 
-        this.background = this.scene.add.image(0, 0, "grass").setOrigin(0);
-        this.background.setScale(2);
+        let data = savegame.levels[this.levelID];
+
+        this.background = this.scene.add.image(0, 0, "level-selector").setOrigin(0);
 
         this.add(this.background);
 
-        this.label = this.scene.add.bitmapText(this.background.x + this.background.width / 2, this.background.y + this.background.height / 2, "font:gui", "?", 20);
-        this.label.setOrigin(0.5);
-        this.label.tint = 0x000000;
+        if (data == undefined) {
+            let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", "?", 60);
+            label.setOrigin(0.5);
+            label.tint = 0x5d6069;
 
-        this.add(this.label);
+            this.add(label);
+        }
 
-        for (let i=0; i<3; i++) {
-            let star = this.scene.add.image(this.background.x, this.background.y + this.background.height, "star").setOrigin(0);
+        if (data != undefined) {
+            for (let i=0; i<3; i++) {
+                let star = this.scene.add.image(this.background.x, this.background.y + this.background.height, "star").setOrigin(0);
 
-            star.x += (star.width * i);
-            this.add(star);
+                star.x += (30 * i) + 8;
+                star.y = ((this.background.height * this.background.scaleY) - star.height) - 4;
+                this.add(star);
+
+                if (data.stars < i+1) {
+                    star.tint = 0x000000;
+                }
+            }
         }
 
         this.background.setInteractive();

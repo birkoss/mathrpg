@@ -12,26 +12,26 @@ class MainScene extends Phaser.Scene {
     }
  
     create() {
-        this.debug = true;
+        this.debug = false;
 
         this.add.tileSprite(0, 0, this.game.config.width, this.game.config.height, "grass").setOrigin(0);
 
+        this.createPanel();
+
         this.question_container = this.add.container(0, 0);
 
-        this.timer_text = this.add.bitmapText(0, 2, "font:gui", "", 20);
+        this.timer_text = this.add.bitmapText(this.panel_container.getBounds().x + 30, 15, "font:gui", "", 30, Phaser.GameObjects.BitmapText.ALIGN_RIGHT);
 
         this.level = new Level();
         this.level.generate(this.config.levelID, this.cache.json.get('levels'));
 
         this.enemy = new Unit(this, this.level.data);
         this.enemy.x = (this.game.config.width - (this.enemy.width * this.enemy.scaleX)) / 2;
-        this.enemy.y = 66;
+        this.enemy.y = 96;
         this.add.existing(this.enemy);
 
         this.enemy_text = this.add.bitmapText(0, 20 + this.enemy.y + (this.enemy.height * this.enemy.scaleY), "font:gui", this.enemy.health + "/" + this.enemy.max_health, 10);
         this.enemy_text.x = (this.game.config.width - this.enemy_text.width) / 2;
-
-
 
         this.timerConfig = { delay: 1000, callback: this.onEvent, callbackScope: this, loop: true, paused: true };
         this.timer = this.time.addEvent(this.timerConfig);
@@ -76,6 +76,40 @@ class MainScene extends Phaser.Scene {
         });
 
         this.effects.anims.play("attack", true);
+    }
+
+    createPanel() {
+        this.panel_container = this.add.container();
+
+        let background = this.add.image(0, 0, "game-panel").setOrigin(0);
+        this.panel_container.add(background);
+
+        this.buttons = this.add.group();
+
+        let button = new CustomButton(this, "Retour");
+
+        button.x = this.panel_container.getBounds().width - button.getBounds().width - 10;
+        button.y = this.panel_container.getBounds().height - button.getBounds().height - 10;
+
+       this.panel_container.add(button);
+
+        let destY = this.game.config.height - background.height;
+
+        this.panel_container.x = (this.game.config.width - background.width) / 2;
+        this.panel_container.y = -this.panel_container.getBounds().height + 66;
+
+        /*
+        this.panel_container.y = this.game.config.height;
+
+        this.tweens.add({
+            targets: this.panel_container,
+            y: destY,
+            ease: 'Cubic',
+            duration: 300,
+            onComplete: this.onQuestionCreated,
+            onCompleteScope: this
+        });
+        */
     }
 
     createPopup(text) {
@@ -219,6 +253,8 @@ class MainScene extends Phaser.Scene {
                 this.attack(this.attack_force);
             }
             this.destroyQuestion();
+        } else if(button.label.text == "Retour") {
+            this.scene.start('LevelScene');
         } else {
             this.attack_force = Math.max(this.attack_force - 2, 0);
             button.disable();
@@ -235,6 +271,17 @@ class MainScene extends Phaser.Scene {
             this.createPopup("Bravo!");
             
             let savegame = this.game.load();
+            if (savegame.levels[this.config.levelID] == null || savegame.levels[this.config.levelID] == undefined) {
+                savegame.levels[this.config.levelID] = {
+                    tries: 0,
+                    stars: 0
+                }
+            }
+
+            savegame.levels[this.config.levelID]['tries']++;
+            savegame.levels[this.config.levelID]['stars'] = 1;
+
+            this.game.save(savegame);
 
         } else if (this.level.isCompleted()) {
             alert("GAME OVER");

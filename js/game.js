@@ -27,6 +27,8 @@ game.load = function() {
 	return savegame;
 }
 
-game.save = function(name, value) {
-	localStorage.setItem(name, JSON.stringify(value));
+game.save = function(savegame) {
+	if (savegame.levels != null) {
+		localStorage.setItem("levels", JSON.stringify(savegame.levels));
+	}
 }

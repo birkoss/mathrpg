@@ -12,7 +12,9 @@ class BootScene extends Phaser.Scene {
         this.load.spritesheet('world', 'assets/sprites/world.png', { frameWidth: 48, frameHeight: 48 });
         this.load.image('grass', 'assets/sprites/grass.png');
         this.load.image('panel', 'assets/sprites/panel.png');
+        this.load.image('game-panel', 'assets/sprites/game-panel.png');
         this.load.image('star', 'assets/sprites/star.png');
+        this.load.image('level-selector', 'assets/sprites/level-selector.png');
 
         this.load.spritesheet('tileset:effectsSmall', 'assets/sprites/effectsSmall.png', { frameWidth: 48, frameHeight: 48 });
         this.load.spritesheet('tileset:effectsLarge', 'assets/sprites/effectsLarge.png', { frameWidth: 64, frameHeight: 64 });
@@ -24,6 +26,7 @@ class BootScene extends Phaser.Scene {
     }
  
     create() {
-        this.scene.start('LevelScene');
+        //this.scene.start('LevelScene');
+        this.scene.start('MainScene', {levelID:"001"});
     }
 };

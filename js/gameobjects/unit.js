@@ -8,7 +8,7 @@ class Unit extends Phaser.GameObjects.Sprite {
         this.health = this.max_health = levelData['enemy']['health'];
 
         scene.anims.create({
-            key: "idle",
+            key: "idle_" + levelData['enemy']['frames'][0],
             frames: [{
                 frame: levelData['enemy']['frames'][0],
                 key: "units"
@@ -21,7 +21,7 @@ class Unit extends Phaser.GameObjects.Sprite {
             repeat: -1
         });
 
-        this.anims.play("idle", true);
+        this.anims.play("idle_" + levelData['enemy']['frames'][0]);
     }
 
     takeDamage(amount) {
