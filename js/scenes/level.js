@@ -28,8 +28,6 @@ class LevelScene extends Phaser.Scene {
                     this.enemy.y = button.y + 4;
                     this.add.existing(this.enemy);
                 }
-
-
             }
         }
 

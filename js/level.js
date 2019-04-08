@@ -52,4 +52,8 @@ class Level {
 	isCompleted() {
 		return this.current_question >= this.questions.length;
 	}
+
+	remainingQuestions() {
+		return Math.max(0, this.questions.length - this.current_question);
+	}
 }

@@ -1,19 +1,20 @@
-class CustomButton extends Phaser.GameObjects.Container {
+class IconButton extends Phaser.GameObjects.Container {
  
-    constructor(scene, text, type) {
+    constructor(scene, spritesheet, frame, type) {
         super(scene, 100, 100);
 
         this.isPressed = this.isDisabled = false;
 
-        this.background = new Phaser.GameObjects.Sprite(scene, 0, 0, "long_buttons");
+        this.background = new Phaser.GameObjects.Sprite(scene, 0, 0, "small_buttons");
         this.background.setOrigin(0);
         this.add(this.background);
 
        //this.timer_text = this.add.bitmapText(0, 2, "font:gui", "", 20);
-        this.label = new Phaser.GameObjects.BitmapText(scene, this.background.width / 2, this.background.height / 2, "font:gui", text, 20);
-        this.label.setOrigin(0.5);
-        this.label.tint = 0xd4d8e9;
-        this.add(this.label);
+        this.icon = new Phaser.GameObjects.Sprite(scene, this.background.width / 2, this.background.height / 2, spritesheet, frame);
+        this.icon.setOrigin(0.5);
+        this.icon.origin_y = this.icon.y;
+        //this.icon.tint = 0xd4d8e9;
+        this.add(this.icon);
 
         this.background.setInteractive();
         this.background.on("pointerdown", () => this.onPointerDown());
@@ -21,7 +22,7 @@ class CustomButton extends Phaser.GameObjects.Container {
         this.background.on("pointerout", () => this.onPointerOut());
 
         if (type == undefined) {
-            type = "answer";
+            type = "exit";
         }
         this.button_type = type;
     }
@@ -30,7 +31,7 @@ class CustomButton extends Phaser.GameObjects.Container {
         this.isDisabled = true;
         //this.background.setFrame(1);
         this.alpha = 0.8;
-        this.label.tint = 0x727685;
+        this.icon.tint = 0x727685;
     	this.background.disableInteractive();
     }
 
@@ -49,10 +50,12 @@ class CustomButton extends Phaser.GameObjects.Container {
 
     onPointerDown() {
     	this.isPressed = true;
-    	this.background.setFrame(2);
+    	this.background.setFrame(1);
+        this.icon.y = this.icon.origin_y + 4;
     }
 
     onPointerOut() {
+        this.icon.y = this.icon.origin_y;
     	this.isPressed = false;
         if (!this.isDisabled) {
             this.background.setFrame(0);

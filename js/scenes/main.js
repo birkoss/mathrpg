@@ -20,7 +20,8 @@ class MainScene extends Phaser.Scene {
 
         this.question_container = this.add.container(0, 0);
 
-        this.timer_text = this.add.bitmapText(this.panel_container.getBounds().x + 30, 15, "font:gui", "", 30, Phaser.GameObjects.BitmapText.ALIGN_RIGHT);
+        this.timer_text = this.add.bitmapText(this.panel_container.getBounds().x + 50, 15, "font:gui", "", 30, Phaser.GameObjects.BitmapText.ALIGN_RIGHT);
+        this.live_text = this.add.bitmapText(this.panel_container.getBounds().x + 148, 15, "font:gui", "10", 30).setOrigin(0, 0);
 
         this.level = new Level();
         this.level.generate(this.config.levelID, this.cache.json.get('levels'));
@@ -33,7 +34,7 @@ class MainScene extends Phaser.Scene {
         this.enemy_text = this.add.bitmapText(0, 20 + this.enemy.y + (this.enemy.height * this.enemy.scaleY), "font:gui", this.enemy.health + "/" + this.enemy.max_health, 10);
         this.enemy_text.x = (this.game.config.width - this.enemy_text.width) / 2;
 
-        this.timerConfig = { delay: 1000, callback: this.onEvent, callbackScope: this, loop: true, paused: true };
+        this.timerConfig = { delay: 1000, callback: this.onTimerEvent, callbackScope: this, loop: true, paused: true };
         this.timer = this.time.addEvent(this.timerConfig);
 
         this.createQuestion();
@@ -44,6 +45,16 @@ class MainScene extends Phaser.Scene {
         this.add.existing(this.health_bar);
 
         this.events.off("ButtonClicked").on("ButtonClicked", this.onButtonClicked, this);
+    }
+
+    showPopup(popup_type) {
+        console.log(popup_type);
+        this.scene.pause();
+        
+        var popup = new PopupScene(popup_type);
+
+        this.scene.add("popup_" + popup_type, popup, true);
+        popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
     }
 
     attack(attack_force) {
@@ -86,7 +97,10 @@ class MainScene extends Phaser.Scene {
 
         this.buttons = this.add.group();
 
-        let button = new CustomButton(this, "Retour");
+        this.add.image(38, 30, "items", 198);
+        this.add.image(136, 30, "items", 84);
+
+        let button = new IconButton(this, "items", 10);
 
         button.x = this.panel_container.getBounds().width - button.getBounds().width - 10;
         button.y = this.panel_container.getBounds().height - button.getBounds().height - 10;
@@ -112,49 +126,8 @@ class MainScene extends Phaser.Scene {
         */
     }
 
-    createPopup(text) {
-        this.question_container.removeAll(true);
-
-        let background = this.add.image(0, 0, "panel").setOrigin(0);
-
-        this.question_container.add(background);
-
-        this.question = this.add.bitmapText(0, 0, "font:gui", text, 20).setOrigin(0);
-        this.question.x = (background.width - this.question.width) / 2;
-        this.question.tint = 0x575246;
-        this.question.y = 34;
-
-        this.question_container.add(this.question);
-
-        this.buttons = this.add.group();
-        
-        let button = new CustomButton(this, "Ok");
-
-        button.x = (background.width - button.getBounds().width) / 2;
-        button.y = (this.question.y * 2) + this.question.height + 50;
-
-        this.buttons.add(button);
-
-        this.question_container.add(button);
-
-        let destY = this.game.config.height - background.height;
-
-        this.question_container.x = (this.game.config.width - background.width) / 2;
-        this.question_container.y = this.game.config.height;
-
-        this.tweens.add({
-            targets: this.question_container,
-            y: destY,
-            ease: 'Cubic',
-            duration: 300,
-            onComplete: this.onQuestionCreated,
-            onCompleteScope: this
-        });
-
-        this.events.off("ButtonClicked").on("ButtonClicked", this.onPopupClicked, this);
-    }
-
     createQuestion() {
+
         this.damage = 10;
 
         this.attack_force = 10;
@@ -170,6 +143,7 @@ class MainScene extends Phaser.Scene {
         this.question_container.add(background);
 
         this.current_question = this.level.nextQuestion();
+        this.live_text.text = this.level.remainingQuestions();
 
         this.question = this.add.bitmapText(0, 0, "font:gui", this.current_question.text + ' =', 20).setOrigin(0);
         this.question.x = (background.width - this.question.width) / 2;
@@ -188,6 +162,11 @@ class MainScene extends Phaser.Scene {
                 new_answer += modifier;
             } else {
                 new_answer -= modifier;
+            }
+
+            /* Prevent negative answer */
+            if (new_answer < 0) {
+                new_answer = 0;
             }
 
             let unique_answer = true;
@@ -248,28 +227,49 @@ class MainScene extends Phaser.Scene {
     }
 
     onButtonClicked(button) {
-        if (button.label.text == this.current_question.answer) {
-            if (this.attack_force > 0) {
-                this.attack(this.attack_force);
-            }
-            this.destroyQuestion();
-        } else if(button.label.text == "Retour") {
-            this.scene.start('LevelScene');
-        } else {
-            this.attack_force = Math.max(this.attack_force - 2, 0);
-            button.disable();
-            this.cameras.main.shake(500);
+        console.log("onButtonClicked");
+        switch (button.getType()) {
+            case "answer":
+                if (button.label.text == this.current_question.answer) {
+                    if (this.attack_force > 0) {
+                        this.attack(this.attack_force);
+                    }
+                    this.destroyQuestion();
+                } else {
+                    this.attack_force = Math.max(this.attack_force - 2, 0);
+                    button.disable();
+                    this.cameras.main.shake(500);
+                }
+                break;
+            case "exit":
+                this.showPopup("leave");
+                break;
         }
     }
 
-    onPopupClicked(button) {
-        this.scene.start('LevelScene');
+    onPopupButtonClicked(popup_type, button_text) {
+        switch (popup_type) {
+            case "leave":
+                switch (button_text) {
+                    case "Oui":
+                        this.scene.start('LevelScene');
+                        break;
+                    case "Non":
+                        this.scene.resume();
+                        break;
+                }
+                break;
+            case "gameover":
+                this.scene.start('LevelScene');
+                break;
+            case "win":
+                this.scene.start('LevelScene');
+                break;
+        }
     }
 
     onQuestionDestroyed(tween, targets) {
         if (!this.enemy.isAlive()) {
-            this.createPopup("Bravo!");
-            
             let savegame = this.game.load();
             if (savegame.levels[this.config.levelID] == null || savegame.levels[this.config.levelID] == undefined) {
                 savegame.levels[this.config.levelID] = {
@@ -292,9 +292,10 @@ class MainScene extends Phaser.Scene {
 
             this.game.save(savegame);
 
+            this.showPopup("win");
+
         } else if (this.level.isCompleted()) {
-            alert("GAME OVER");
-            this.scene.restart();
+            this.showPopup("gameover");
         } else {
             this.createQuestion();
         }
@@ -305,7 +306,7 @@ class MainScene extends Phaser.Scene {
         this.timer.paused = false;
     }
 
-    onEvent() {
+    onTimerEvent() {
         this.attack_force = Math.max(this.attack_force - 1, 0);
 
         this.timer_text.setText(this.attack_force);
