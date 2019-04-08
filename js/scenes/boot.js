@@ -28,7 +28,7 @@ class BootScene extends Phaser.Scene {
     }
  
     create() {
-        //this.scene.start('LevelScene');
-        this.scene.start('MainScene', {levelID:"001"});
+        this.scene.start('LevelScene');
+        //this.scene.start('MainScene', {levelID:"001"});
     }
 };

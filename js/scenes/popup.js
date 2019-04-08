@@ -2,20 +2,26 @@ class PopupScene extends Phaser.Scene {
     constructor(type) {
         super({key:'PopupScene'});
 
+        console.log("CONSTRUCTOR");
+
         this.popup_type = type;
     }
  
     create() {
+        console.log("CREATE");
        this.background = this.add.graphics();
 
        this.background.fillStyle(0x000000, 1);
        this.background.fillRect(0, 0, this.game.config.width, this.game.config.height);
 
-
        this.popup_container = this.add.container();
        this.createPopup("Es-tu sur ?");
 
        this.events.off("ButtonClicked").on("ButtonClicked", this.onButtonClicked, this);
+    }
+
+    init() {
+        console.log("INIT");
     }
 
     createPopup(text) {

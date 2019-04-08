@@ -18,43 +18,32 @@ class MainScene extends Phaser.Scene {
 
         this.createPanel();
 
-        this.question_container = this.add.container(0, 0);
-
-        this.timer_text = this.add.bitmapText(this.panel_container.getBounds().x + 50, 15, "font:gui", "", 30, Phaser.GameObjects.BitmapText.ALIGN_RIGHT);
-        this.live_text = this.add.bitmapText(this.panel_container.getBounds().x + 148, 15, "font:gui", "10", 30).setOrigin(0, 0);
-
         this.level = new Level();
         this.level.generate(this.config.levelID, this.cache.json.get('levels'));
 
-        this.enemy = new Unit(this, this.level.data);
-        this.enemy.x = (this.game.config.width - (this.enemy.width * this.enemy.scaleX)) / 2;
-        this.enemy.y = 96;
-        this.add.existing(this.enemy);
-
-        this.enemy_text = this.add.bitmapText(0, 20 + this.enemy.y + (this.enemy.height * this.enemy.scaleY), "font:gui", this.enemy.health + "/" + this.enemy.max_health, 10);
-        this.enemy_text.x = (this.game.config.width - this.enemy_text.width) / 2;
+        this.createEnemy();
 
         this.timerConfig = { delay: 1000, callback: this.onTimerEvent, callbackScope: this, loop: true, paused: true };
         this.timer = this.time.addEvent(this.timerConfig);
 
+        this.question_container = this.add.container();
         this.createQuestion();
-
-        this.health_bar = new HealthBar(this, 96, 6, 0x700A0A, 0xCD2222);
-        this.health_bar.x = (this.game.config.width - 96) / 2;
-        this.health_bar.y = this.enemy.y + (this.enemy.height * this.enemy.scaleY) + 10;
-        this.add.existing(this.health_bar);
 
         this.events.off("ButtonClicked").on("ButtonClicked", this.onButtonClicked, this);
     }
 
     showPopup(popup_type) {
-        console.log(popup_type);
-        this.scene.pause();
-        
-        var popup = new PopupScene(popup_type);
+        //this.scene.pause();
 
+        console.log("BEFORE");
+        var popup = new PopupScene(popup_type);
+        console.log("Adding");
         this.scene.add("popup_" + popup_type, popup, true);
-        popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
+        console.log("Events: ", popup.events);
+        if (popup.events != undefined) {
+            popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
+        }
+        console.log("AFTER");
     }
 
     attack(attack_force) {
@@ -89,48 +78,73 @@ class MainScene extends Phaser.Scene {
         this.effects.anims.play("attack", true);
     }
 
+    createEnemy() {
+        this.enemy = new Unit(this, this.level.data);
+        this.enemy.x = (this.game.config.width - (this.enemy.width * this.enemy.scaleX)) / 2;
+        this.enemy.y = 96;
+        this.add.existing(this.enemy);
+
+        this.enemy_text = this.add.bitmapText(0, 20 + this.enemy.y + (this.enemy.height * this.enemy.scaleY), "font:gui", this.enemy.health + "/" + this.enemy.max_health, 10);
+        this.enemy_text.x = (this.game.config.width - this.enemy_text.width) / 2;
+
+        this.health_bar = new HealthBar(this, 96, 6, 0x700A0A, 0xCD2222);
+        this.health_bar.x = (this.game.config.width - 96) / 2;
+        this.health_bar.y = this.enemy.y + (this.enemy.height * this.enemy.scaleY) + 10;
+        this.add.existing(this.health_bar);
+
+        this.enemy.destination_x = this.enemy.x;
+        this.enemy.x = this.game.config.width;
+        this.tweens.add({
+            targets: this.enemy,
+            x: this.enemy.destination_x,
+            ease: 'Cubic',
+            duration: 300,
+            onComplete: this.onEnemyReady,
+            onCompleteScope: this
+        });
+
+        this.enemy_text.alpha = 0;
+        this.health_bar.alpha = 0;
+    }
+
     createPanel() {
         this.panel_container = this.add.container();
 
         let background = this.add.image(0, 0, "game-panel").setOrigin(0);
         this.panel_container.add(background);
 
-        this.buttons = this.add.group();
+        this.timer_text = this.add.bitmapText(this.panel_container.getBounds().x + 52, this.panel_container.getBounds().height - 52, "font:gui", "", 30, Phaser.GameObjects.BitmapText.ALIGN_RIGHT);
+        this.panel_container.add(this.timer_text);
 
-        this.add.image(38, 30, "items", 198);
-        this.add.image(136, 30, "items", 84);
+        let icon = this.add.image(this.panel_container.getBounds().x + 30, this.panel_container.getBounds().height - 36, "items", 198);
+        this.panel_container.add(icon);
+
+        icon = this.add.image(this.panel_container.getBounds().x + 156, this.panel_container.getBounds().height - 34, "items", 84);
+        this.panel_container.add(icon);
+        this.live_text = this.add.bitmapText(this.panel_container.getBounds().x + 178, this.panel_container.getBounds().height - 52, "font:gui", "10", 30).setOrigin(0, 0);
+        this.panel_container.add(this.live_text);
 
         let button = new IconButton(this, "items", 10);
-
         button.x = this.panel_container.getBounds().width - button.getBounds().width - 10;
         button.y = this.panel_container.getBounds().height - button.getBounds().height - 10;
+        this.panel_container.add(button);
 
-       this.panel_container.add(button);
-
-        let destY = this.game.config.height - background.height;
 
         this.panel_container.x = (this.game.config.width - background.width) / 2;
         this.panel_container.y = -this.panel_container.getBounds().height + 66;
 
-        /*
-        this.panel_container.y = this.game.config.height;
-
+        this.panel_container.destination_y = this.panel_container.y;
+        this.panel_container.y = -this.panel_container.getBounds().height;
         this.tweens.add({
             targets: this.panel_container,
-            y: destY,
+            y: this.panel_container.destination_y,
             ease: 'Cubic',
             duration: 300,
-            onComplete: this.onQuestionCreated,
-            onCompleteScope: this
         });
-        */
     }
 
     createQuestion() {
-
-        this.damage = 10;
-
-        this.attack_force = 10;
+        this.attack_force = 99;
         this.timer_text.setText(this.attack_force);
 
         //this.timer.reset({paused: false});
@@ -227,7 +241,6 @@ class MainScene extends Phaser.Scene {
     }
 
     onButtonClicked(button) {
-        console.log("onButtonClicked");
         switch (button.getType()) {
             case "answer":
                 if (button.label.text == this.current_question.answer) {
@@ -295,7 +308,7 @@ class MainScene extends Phaser.Scene {
             this.showPopup("win");
 
         } else if (this.level.isCompleted()) {
-            this.showPopup("gameover");
+            //this.showPopup("gameover");
         } else {
             this.createQuestion();
         }
@@ -321,5 +334,20 @@ class MainScene extends Phaser.Scene {
                 }
             }, this);
         }
+    }
+
+    onEnemyReady() {
+        this.tweens.add({
+            targets: this.enemy_text,
+            alpha: 1,
+            ease: 'Cubic',
+            duration: 600,
+        });
+        this.tweens.add({
+            targets: this.health_bar,
+            alpha: 1,
+            ease: 'Cubic',
+            duration: 600,
+        });
     }
 };

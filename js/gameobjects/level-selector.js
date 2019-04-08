@@ -19,7 +19,7 @@ class LevelSelector extends Phaser.GameObjects.Container {
         this.add(this.background);
 
         if (data == undefined) {
-            let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", "?", 60);
+            let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", parseInt(this.levelID), 30);
             label.setOrigin(0.5);
             label.tint = 0x5d6069;
 
@@ -38,6 +38,14 @@ class LevelSelector extends Phaser.GameObjects.Container {
                     star.tint = 0x000000;
                 }
             }
+
+            this.enemy = new Unit(this.scene, levelsData[this.levelID]);
+            this.enemy.setOrigin(0);
+            this.enemy.x = 0 + ((this.background.width - (this.enemy.width * this.enemy.scaleX)) / 2);
+            this.enemy.y = 0 + 4;
+            this.enemy.alpha = 0.2;
+            this.scene.sys.updateList.add(this.enemy);
+            this.add(this.enemy);
         }
 
         this.background.setInteractive();
