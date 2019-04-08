@@ -12,7 +12,7 @@ class PopupScene extends Phaser.Scene {
        this.background.fillRect(0, 0, this.game.config.width, this.game.config.height);
 
 
-       this.question_container = this.add.container(0, 0);
+       this.popup_container = this.add.container();
        this.createPopup("Es-tu sur ?");
 
        this.events.off("ButtonClicked").on("ButtonClicked", this.onButtonClicked, this);
@@ -22,14 +22,14 @@ class PopupScene extends Phaser.Scene {
 
         let background = this.add.image(0, 0, "panel").setOrigin(0);
 
-        this.question_container.add(background);
+        this.popup_container.add(background);
 
-        this.question = this.add.bitmapText(0, 0, "font:gui", text, 20).setOrigin(0);
-        this.question.x = (background.width - this.question.width) / 2;
-        this.question.tint = 0x575246;
-        this.question.y = 34;
+        this.message = this.add.bitmapText(0, 0, "font:gui", text, 20).setOrigin(0);
+        this.message.x = (background.width - this.message.width) / 2;
+        this.message.tint = 0x575246;
+        this.message.y = 34;
 
-        this.question_container.add(this.question);
+        this.popup_container.add(this.message);
 
         this.buttons = this.add.group();
         let button;
@@ -38,47 +38,45 @@ class PopupScene extends Phaser.Scene {
             case "leave":
                 button = new CustomButton(this, "Oui", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
-                button.y = (this.question.y * 2) + this.question.height + 50;
+                button.y = (this.message.y * 2) + this.message.height + 50;
                 this.buttons.add(button);
-                this.question_container.add(button);
+                this.popup_container.add(button);
 
                 button = new CustomButton(this, "Non", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
-                button.y = (this.question.y * 2) + this.question.height + 150;
+                button.y = (this.message.y * 2) + this.message.height + 150;
                 this.buttons.add(button);
-                this.question_container.add(button);
+                this.popup_container.add(button);
                 break;
             case "gameover":
-                this.question.text = "Tu es mort !";
+                this.message.text = "Tu es mort !";
                 button = new CustomButton(this, "Ok", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
-                button.y = (this.question.y * 2) + this.question.height + 50;
+                button.y = (this.message.y * 2) + this.message.height + 50;
                 this.buttons.add(button);
-                this.question_container.add(button);
+                this.popup_container.add(button);
                 break;
             case "win":
-                this.question.text = "Bravo !";
+                this.message.text = "Bravo !";
                 button = new CustomButton(this, "Ok", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
-                button.y = (this.question.y * 2) + this.question.height + 50;
+                button.y = (this.message.y * 2) + this.message.height + 50;
                 this.buttons.add(button);
-                this.question_container.add(button);
+                this.popup_container.add(button);
                 break;
         }
 
         let destY = this.game.config.height - background.height;
 
-        this.question_container.x = (this.game.config.width - background.width) / 2;
-        this.question_container.y = this.game.config.height;
+        this.popup_container.x = (this.game.config.width - background.width) / 2;
+        this.popup_container.y = this.game.config.height;
         this.background.alpha = 0;
 
         this.tweens.add({
-            targets: this.question_container,
+            targets: this.popup_container,
             y: destY,
             ease: 'Cubic',
             duration: 300,
-            onComplete: this.onQuestionCreated,
-            onCompleteScope: this
         });
         this.tweens.add({
             targets: this.background,
@@ -90,7 +88,7 @@ class PopupScene extends Phaser.Scene {
 
     close() {
         this.tweens.add({
-            targets: this.question_container,
+            targets: this.popup_container,
             y: this.game.config.height,
             alpha: 0,
             ease: 'Cubic',
