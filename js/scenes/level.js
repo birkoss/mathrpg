@@ -123,8 +123,9 @@ class LevelScene extends Phaser.Scene {
 
             let popup_type = "level_locked";
             let popup = new PopupScene(popup_type, {unlockData:button.unlockData});
+            popup.setEvent(this.onPopupButtonClicked, this);
+            
             this.scene.add("popup_" + popup_type, popup, true);
-            popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
         }
     }
 

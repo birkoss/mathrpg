@@ -33,17 +33,12 @@ class MainScene extends Phaser.Scene {
     }
 
     showPopup(popup_type, config) {
-        //this.scene.pause();
+        this.scene.pause();
 
-        console.log("BEFORE");
         var popup = new PopupScene(popup_type, config);
-        console.log("Adding");
+        popup.setEvent(this.onPopupButtonClicked, this);
+        
         this.scene.add("popup_" + popup_type, popup, true);
-        console.log("Events: ", popup.events);
-        if (popup.events != undefined) {
-            popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
-        }
-        console.log("AFTER");
     }
 
     attack(attack_force) {

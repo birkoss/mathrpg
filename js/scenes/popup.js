@@ -6,6 +6,8 @@ class PopupScene extends Phaser.Scene {
 
         this.popup_type = type;
         this.config = config;
+
+        this.handler = null;
     }
  
     create() {
@@ -25,7 +27,15 @@ class PopupScene extends Phaser.Scene {
         console.log("INIT");
     }
 
+    setEvent(handler, context) {
+        this.handler = {handler: handler, context:context};
+    }
+
     createPopup(text) {
+        if (this.handler != null) {
+            this.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.handler.handler, this.handler.context);
+        }
+
 
         let background = this.add.image(0, 0, "popup:background").setOrigin(0);
         this.popup_container.add(background);
