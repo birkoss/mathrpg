@@ -25,6 +25,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('level-selector', 'assets/sprites/level-selector.png');
         this.load.image('arrow-left', 'assets/sprites/arrow_left.png');
         this.load.image('arrow-right', 'assets/sprites/arrow_right.png');
+        this.load.image('padlock', 'assets/sprites/padlock.png');
 
         this.load.spritesheet('tileset:effectsSmall', 'assets/sprites/effectsSmall.png', { frameWidth: 48, frameHeight: 48 });
         this.load.spritesheet('tileset:effectsLarge', 'assets/sprites/effectsLarge.png', { frameWidth: 64, frameHeight: 64 });

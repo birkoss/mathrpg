@@ -30,13 +30,16 @@ class LevelSelector extends Phaser.GameObjects.Container {
         }
 
         if (data == undefined) {
-            let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", parseInt(this.levelID), 30);
-            label.setOrigin(0.5);
-            label.tint = 0x5d6069;
-            this.add(label);
-
             if (this.isLocked) {
-                label.alpha = 0.2;
+                let padlock = this.scene.add.image(0, 0, "padlock").setOrigin(0.5);
+                padlock.x = (this.background.width) / 2;
+                padlock.y = (this.background.height) / 2;
+                this.add(padlock);
+            } else {
+                let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", parseInt(this.levelID), 40);
+                label.setOrigin(0.5);
+                label.tint = 0x5d6069;
+                this.add(label);
             }
         }
 
