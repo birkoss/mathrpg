@@ -5,7 +5,7 @@ class Level {
 	}
 
 	generate(levelID, levelsData) {
-		this.data = levelsData[levelID];
+		this.data = levelsData.filter(levelData => levelData.id == levelID)[0];
 
 		this.data['questions'].forEach(function(single_block) {
 			let current_quantity = 0;

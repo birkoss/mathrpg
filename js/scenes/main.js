@@ -283,6 +283,10 @@ class MainScene extends Phaser.Scene {
 
     onQuestionDestroyed(tween, targets) {
         if (!this.enemy.isAlive()) {
+
+            /* Hide enemy information when it's dead */
+            this.health_bar.alpha = this.enemy_text.alpha = 0;
+
             let savegame = this.game.load();
             if (savegame.levels[this.config.levelID] == null || savegame.levels[this.config.levelID] == undefined) {
                 savegame.levels[this.config.levelID] = {

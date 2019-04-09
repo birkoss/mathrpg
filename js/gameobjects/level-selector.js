@@ -1,16 +1,14 @@
 class LevelSelector extends Phaser.GameObjects.Container {
  
-    constructor(scene, levelID, levelsData, savegame) {
-        super(scene, 100, 100);
+    constructor(scene, levelIndex, levelsData, savegame) {
+        super(scene);
+
+        let levelData = levelsData[levelIndex];
 
         this.isPressed = this.isDisabled = false;
 
-        this.levelID = levelID;
-        if (this.levelID < 10) {
-            this.levelID = "00" + this.levelID;
-        } else if (this.levelID < 100) {
-            this.levelID = "0" + this.levelID;
-        }
+        this.levelID = levelData.id;
+
 
         let data = savegame.levels[this.levelID];
 
@@ -39,11 +37,10 @@ class LevelSelector extends Phaser.GameObjects.Container {
                 }
             }
 
-            this.enemy = new Unit(this.scene, levelsData[this.levelID]);
+            this.enemy = new Unit(this.scene, levelData);
             this.enemy.setOrigin(0);
             this.enemy.x = 0 + ((this.background.width - (this.enemy.width * this.enemy.scaleX)) / 2);
             this.enemy.y = 0 + 4;
-            this.enemy.alpha = 0.2;
             this.scene.sys.updateList.add(this.enemy);
             this.add(this.enemy);
         }
