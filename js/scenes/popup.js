@@ -92,9 +92,37 @@ class PopupScene extends Phaser.Scene {
                 this.message.text = "Bravo !\nTu as gagné !";
                 button = new CustomButton(this, "Ok", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
-                button.y = (this.message.y * 2) + this.message.height + 50;
+                button.y = (this.message.y * 2) + this.message.height + 100;
                 this.buttons.add(button);
                 this.popup_container.add(button);
+
+                for (let i=0; i<3; i++) {
+                    let star_shadow =  this.add.image((i * 80) + 50, 140 + (i == 1 ? -20 : 0), "star_large");
+                    star_shadow.x += (star_shadow.width/2);
+                    star_shadow.y += (star_shadow.height/2);
+                    star_shadow.tint = 0x000000;
+                    this.popup_container.add(star_shadow);
+
+                    if (this.config != undefined && this.config.stars != undefined && this.config.stars > i) {
+                        let star =  this.add.image((i * 80) + 50, 140 + (i == 1 ? -20 : 0), "star_large");
+                        star.x += (star.width/2);
+                        star.y += (star.height/2);
+                        star.setScale(10, 10);
+                        star.alpha = 0;
+                        this.popup_container.add(star);
+
+                        this.tweens.add({
+                            targets: star,
+                            alpha: 1,
+                            scaleX: 1,
+                            scaleY: 1,
+                            duration: 600,
+                            ease: 'Cubic',
+                            delay: i * 500
+                        });
+                    }
+                }
+
                 break;
             case "level_locked":
                 let levelID = "";

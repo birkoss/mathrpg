@@ -32,11 +32,11 @@ class MainScene extends Phaser.Scene {
         this.events.off("ButtonClicked").on("ButtonClicked", this.onButtonClicked, this);
     }
 
-    showPopup(popup_type) {
+    showPopup(popup_type, config) {
         //this.scene.pause();
 
         console.log("BEFORE");
-        var popup = new PopupScene(popup_type);
+        var popup = new PopupScene(popup_type, config);
         console.log("Adding");
         this.scene.add("popup_" + popup_type, popup, true);
         console.log("Events: ", popup.events);
@@ -304,12 +304,14 @@ class MainScene extends Phaser.Scene {
 
             */
 
+            let stars = 1;
+
             savegame.levels[this.config.levelID]['tries']++;
-            savegame.levels[this.config.levelID]['stars'] = 1;
+            savegame.levels[this.config.levelID]['stars'] = stars;
 
             this.game.save(savegame);
 
-            this.showPopup("win");
+            this.showPopup("win", {stars: stars});
 
         } else if (this.level.isCompleted()) {
             //this.showPopup("gameover");

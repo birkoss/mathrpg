@@ -22,6 +22,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('question', 'assets/sprites/question.png');
         this.load.image('game-panel', 'assets/sprites/game-panel.png');
         this.load.image('star', 'assets/sprites/star.png');
+        this.load.image('star_large', 'assets/sprites/star_large.png');
         this.load.image('level-selector', 'assets/sprites/level-selector.png');
         this.load.image('arrow-left', 'assets/sprites/arrow_left.png');
         this.load.image('arrow-right', 'assets/sprites/arrow_right.png');
