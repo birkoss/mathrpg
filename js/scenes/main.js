@@ -152,7 +152,7 @@ class MainScene extends Phaser.Scene {
 
         this.question_container.removeAll(true);
 
-        let background = this.add.image(0, 0, "panel").setOrigin(0);
+        let background = this.add.image(0, 0, "question").setOrigin(0);
 
         this.question_container.add(background);
 

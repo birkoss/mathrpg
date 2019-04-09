@@ -5,7 +5,7 @@ class LevelSelector extends Phaser.GameObjects.Container {
 
         let levelData = levelsData[levelIndex];
 
-        this.isPressed = this.isDisabled = false;
+        this.isPressed = this.isDisabled = this.isLocked = false;
 
         this.levelID = levelData.id;
 
@@ -13,15 +13,31 @@ class LevelSelector extends Phaser.GameObjects.Container {
         let data = savegame.levels[this.levelID];
 
         this.background = this.scene.add.image(0, 0, "level-selector").setOrigin(0);
-
         this.add(this.background);
+
+        if (levelData.unlock != undefined) {
+            this.unlockData = levelData.unlock;
+
+            levelData.unlock.forEach(single_unlock => {
+                switch (single_unlock.type) {
+                    case "beat":
+                        if (savegame.levels[single_unlock.levelID] == undefined) {
+                            this.isLocked = true;
+                        }
+                        break;
+                }
+            });
+        }
 
         if (data == undefined) {
             let label = this.scene.add.bitmapText((this.background.width * this.background.scaleX) / 2, (this.background.height * this.background.scaleY) / 2, "font:gui", parseInt(this.levelID), 30);
             label.setOrigin(0.5);
             label.tint = 0x5d6069;
-
             this.add(label);
+
+            if (this.isLocked) {
+                label.alpha = 0.2;
+            }
         }
 
         if (data != undefined) {

@@ -116,7 +116,16 @@ class LevelScene extends Phaser.Scene {
     }
 
     onLevelSelectorClicked(button) {
-        this.hideSelectors(button, this.onSelectorMoved);
+        if (!button.isLocked) {
+            this.hideSelectors(button, this.onSelectorMoved);
+        } else {
+            this.scene.pause();
+
+            let popup_type = "level_locked";
+            let popup = new PopupScene(popup_type, {unlockData:button.unlockData});
+            this.scene.add("popup_" + popup_type, popup, true);
+            popup.events.off("ButtonPopupClicked").on("ButtonPopupClicked", this.onPopupButtonClicked, this);
+        }
     }
 
     onSelectorMoved(tween, selector, button) {
@@ -145,6 +154,14 @@ class LevelScene extends Phaser.Scene {
                 if (this.page < this.maxPages()) {
                     this.hideSelectors(1, this.onArrowClicked);
                 }
+                break;
+        }
+    }
+
+    onPopupButtonClicked(popup_type, button_text) {
+        switch (popup_type) {
+            case "level_locked":
+                this.scene.resume();
                 break;
         }
     }

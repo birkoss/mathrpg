@@ -28,6 +28,12 @@
 			"frames": [228, 246],
 			"health": 64
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "001"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 8,
@@ -50,6 +56,12 @@
 			"frames": [225, 243],
 			"health": 70
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "002"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 3,
@@ -72,6 +84,12 @@
 			"frames": [216, 234],
 			"health": 77
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "003"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 3,
@@ -100,6 +118,12 @@
 			"frames": [294, 312],
 			"health": 85
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "004"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 2,
@@ -128,6 +152,12 @@
 			"frames": [290, 308],
 			"health": 90
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "005"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 2,
@@ -156,6 +186,12 @@
 			"frames": [332, 350],
 			"health": 92
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "006"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 4,
@@ -184,6 +220,12 @@
 			"frames": [335, 353],
 			"health": 94
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "007"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 2,
@@ -212,6 +254,12 @@
 			"frames": [218, 236],
 			"health": 96
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "008"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 2,
@@ -240,6 +288,12 @@
 			"frames": [218, 236],
 			"health": 96
 		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "009"
+			}
+		],
 		"questions": [
 			{
 				"quantity": 2,
