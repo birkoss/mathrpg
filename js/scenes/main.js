@@ -37,7 +37,7 @@ class MainScene extends Phaser.Scene {
 
         var popup = new PopupScene(popup_type, config);
         popup.setEvent(this.onPopupButtonClicked, this);
-        
+
         this.scene.add("popup_" + popup_type, popup, true);
     }
 
@@ -61,14 +61,13 @@ class MainScene extends Phaser.Scene {
             }],
             frameRate: 20,
             yoyo: true,
-            repeat: 2,
-            onComplete: this.onAttackCompleted,
-            onCompleteScope: this
+            repeat: 2
         });
 
-        this.effects.on("animationcomplete", function() {
-            this.destroy();
-        });
+        this.effects.on("animationcomplete", function(tween, sprite, element) {
+            element.destroy();
+            this.destroyQuestion();
+        }, this);
 
         this.effects.anims.play("attack", true);
     }
@@ -139,16 +138,12 @@ class MainScene extends Phaser.Scene {
     }
 
     createQuestion() {
-        this.attack_force = 99;
+        this.attack_force = 10;
         this.timer_text.setText(this.attack_force);
-
-        //this.timer.reset({paused: false});
-
 
         this.question_container.removeAll(true);
 
         let background = this.add.image(0, 0, "question").setOrigin(0);
-
         this.question_container.add(background);
 
         this.current_question = this.level.nextQuestion();
@@ -158,7 +153,6 @@ class MainScene extends Phaser.Scene {
         this.question.x = (background.width - this.question.width) / 2;
         this.question.tint = 0x575246;
         this.question.y = 34;
-
         this.question_container.add(this.question);
 
         let answers = [this.current_question.answer];
@@ -173,7 +167,7 @@ class MainScene extends Phaser.Scene {
                 new_answer -= modifier;
             }
 
-            /* Prevent negative answer */
+            /* Prevent negative answer, for now */
             if (new_answer < 0) {
                 new_answer = 0;
             }
@@ -242,7 +236,6 @@ class MainScene extends Phaser.Scene {
                     if (this.attack_force > 0) {
                         this.attack(this.attack_force);
                     }
-                    this.destroyQuestion();
                 } else {
                     this.attack_force = Math.max(this.attack_force - 2, 0);
                     button.disable();
@@ -293,23 +286,35 @@ class MainScene extends Phaser.Scene {
             /*
                 @TODO:
                 Determine the rating with :
-                    - Time remaining
                     - Combo
-                    - Set a score on 100.
-
+                        - Maybe add the longest combo to the score
             */
 
-            let stars = 1;
+            let stars = 0;
+
+            let max_total = (this.level.questions.length * 10) - this.enemy.max_health;
+
+            let current_total = (this.level.remainingQuestions() * 10) + this.attack_force;
+
+            if (current_total >= max_total * .75) {
+                stars = 3;
+            } else if (current_total >= max_total * .50) {
+                stars = 2
+            } else if (current_total >= max_total * .25) {
+                stars = 1
+            } 
 
             savegame.levels[this.config.levelID]['tries']++;
-            savegame.levels[this.config.levelID]['stars'] = stars;
+            if (savegame.levels[this.config.levelID]['stars'] < stars) {
+                savegame.levels[this.config.levelID]['stars'] = stars;
+            }
 
             this.game.save(savegame);
 
             this.showPopup("win", {stars: stars});
 
         } else if (this.level.isCompleted()) {
-            //this.showPopup("gameover");
+            this.showPopup("gameover");
         } else {
             this.createQuestion();
         }

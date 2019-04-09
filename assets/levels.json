@@ -2,7 +2,7 @@
 	{
 		"id": "001",
 		"enemy": {
-			"name": "Rat",
+			"name": "Rat gris",
 			"frames": [223, 241],
 			"health": 60
 		},
@@ -24,7 +24,7 @@
 	{
 		"id": "002",
 		"enemy": {
-			"name": "Chien",
+			"name": "Loup gris",
 			"frames": [228, 246],
 			"health": 64
 		},
@@ -80,7 +80,7 @@
 	{
 		"id": "004",
 		"enemy": {
-			"name": "Slime",
+			"name": "Slime mauve",
 			"frames": [216, 234],
 			"health": 77
 		},
@@ -182,7 +182,7 @@
 	{
 		"id": "007",
 		"enemy": {
-			"name": "Ours",
+			"name": "Ours brun",
 			"frames": [332, 350],
 			"health": 92
 		},
@@ -216,7 +216,7 @@
 	{
 		"id": "008",
 		"enemy": {
-			"name": "Scorpion",
+			"name": "Scorpion géant",
 			"frames": [335, 353],
 			"health": 94
 		},
@@ -250,7 +250,7 @@
 	{
 		"id": "009",
 		"enemy": {
-			"name": "Chauve-Souris",
+			"name": "Chauve-Souris noire",
 			"frames": [218, 236],
 			"health": 96
 		},
@@ -284,14 +284,184 @@
 	{
 		"id": "010",
 		"enemy": {
-			"name": "Chauve-Souris",
-			"frames": [218, 236],
+			"name": "Voleur",
+			"frames": [1, 19],
 			"health": 96
 		},
 		"unlock": [
 			{
 				"type": "beat",
 				"levelID": "009"
+			}
+		],
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	{
+		"id": "011",
+		"enemy": {
+			"name": "Navet",
+			"frames": [362, 380],
+			"health": 96
+		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "010"
+			}
+		],
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	{
+		"id": "012",
+		"enemy": {
+			"name": "Yéti",
+			"frames": [328, 346],
+			"health": 96
+		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "011"
+			}
+		],
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	{
+		"id": "012",
+		"enemy": {
+			"name": "Wisp",
+			"frames": [360, 378],
+			"health": 96
+		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "011"
+			}
+		],
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	{
+		"id": "013",
+		"enemy": {
+			"name": "Oeil",
+			"frames": [368, 386],
+			"health": 96
+		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "012"
+			}
+		],
+		"questions": [
+			{
+				"quantity": 2,
+				"first_operand_range": [6, 10],
+				"second_operand_range": [5, 8],
+				"operator": "+"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [7, 10],
+				"second_operand_range": [6, 9],
+				"operator": "-"
+			},
+			{
+				"quantity": 5,
+				"first_operand_range": [10, 14],
+				"second_operand_range": [5, 8],
+				"operator": "-"
+			}
+		]
+	},
+	{
+		"id": "014",
+		"enemy": {
+			"name": "Feu",
+			"frames": [376, 394],
+			"health": 96
+		},
+		"unlock": [
+			{
+				"type": "beat",
+				"levelID": "015"
 			}
 		],
 		"questions": [
