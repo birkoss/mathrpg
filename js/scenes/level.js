@@ -7,39 +7,48 @@ class LevelScene extends Phaser.Scene {
  
     create() {
         let index = 1;
-        this.isAnimating = false;
+        this.grid = {width: 3, height: 3};
+        this.limit = this.grid.width * this.grid.height;
 
         this.panel_container = this.add.container(0, 0);
         this.levels_container = this.add.container(0, 70);
 
-        let button = new IconButton(this, "arrow-left", 0, "arrow-left");
-        button.x = button.y = 10;
-        //button.x = this.levels_container.getBounds().width - button.getBounds().width - 10;
-        //button.y = this.levels_container.getBounds().height - button.getBounds().height - 10;
-        this.panel_container.add(button);
+        this.btn_previous_page = new IconButton(this, "arrow-left", 0, "arrow-left");
+        this.btn_previous_page.x = this.btn_previous_page.y = 10;
+        this.panel_container.add(this.btn_previous_page);
 
-        button = new IconButton(this, "arrow-right", 0, "arrow-right");
-        button.x = this.game.config.width - 10 - button.getBounds().width;
-        button.y = 10;
-        //button.x = this.levels_container.getBounds().width - button.getBounds().width - 10;
-        //button.y = this.levels_container.getBounds().height - button.getBounds().height - 10;
-        this.panel_container.add(button);
+        this.btn_next_page = new IconButton(this, "arrow-right", 0, "arrow-right");
+        this.btn_next_page.x = this.game.config.width - 10 - this.btn_next_page.getBounds().width;
+        this.btn_next_page.y = 10;
+        this.panel_container.add(this.btn_next_page);
 
         this.page = 0;
         this.createSelectors();
     }
 
     createSelectors() {
+        /* Disable navigation button depending on the current page */
+        if (this.page <= this.minPages()) {
+            this.btn_previous_page.disable();
+        } else {
+            this.btn_previous_page.enable();
+        }
+
+        if (this.page >= this.maxPages()) {
+            this.btn_next_page.disable();
+        } else {
+            this.btn_next_page.enable();
+        }
+
         let savegame = this.game.load();
 
-        let index = (this.page*9);
+        let index = (this.page*this.limit);
 
-        let spacing = (this.game.config.width - 300) / 4;
+        let spacing = (this.game.config.width - (this.grid.width*100)) / (this.grid.width + 1);
 
         this.levels_container.removeAll(true);
-
-        for (let y=0; y<3; y++) {
-            for (let x=0; x<3; x++) {
+        for (let y=0; y<this.grid.height; y++) {
+            for (let x=0; x<this.grid.width; x++) {
                 if (index < this.cache.json.get('levels').length) {
                     let selector = new LevelSelector(this, index++, this.cache.json.get('levels'), savegame);
                     selector.x = ((100 + spacing) * x) + spacing;
@@ -53,23 +62,27 @@ class LevelScene extends Phaser.Scene {
             }
         }
 
-        index = 0;
-        for (let y=0; y<3; y++) {
-            for (let x=0; x<3; x++) {
-                index = ((y * 3) + x);
-                if (this.levels_container.getAt(index) != null) {
-                    this.tweens.add({
-                        targets: this.levels_container.getAt(index),
-                        y: this.levels_container.getAt(index).destination_y,
-                        ease: 'Cubic',
-                        duration: 300,
-                        delay: index * 50,
-                        onComplete: this.onLevelSelectorVisible,
-                        onCompleteScope: this
-                    });
-                }
+        for (let i=0; i<this.levels_container.count(); i++) {
+            if (this.levels_container.getAt(i) != null) {
+                this.tweens.add({
+                    targets: this.levels_container.getAt(i),
+                    y: this.levels_container.getAt(i).destination_y,
+                    ease: 'Cubic',
+                    duration: 300,
+                    delay: i * 50,
+                    onComplete: this.onLevelSelectorVisible,
+                    onCompleteScope: this
+                });
             }
         }
+    }
+
+    minPages() {
+        return 0;
+    }
+
+    maxPages() {
+        return Math.floor(this.cache.json.get("levels").length / this.limit);
     }
 
     hideSelectors(params, callback) {
@@ -116,7 +129,7 @@ class LevelScene extends Phaser.Scene {
     onArrowClicked(tween, selector, direction) {
         let active_tweens = this.tweens.getAllTweens().filter(tween => tween.isPlaying());
         if (active_tweens.length == 1) {
-            this.page = Math.min(Math.max(0, this.page + direction), Math.floor(this.cache.json.get('levels').length / 9));
+            this.page = Math.min(Math.max(this.minPages(), this.page + direction), this.maxPages());
             this.createSelectors();
         }
     }
@@ -124,12 +137,12 @@ class LevelScene extends Phaser.Scene {
     onButtonClicked(button) {
         switch (button.getType()) {
             case "arrow-left":
-                if (this.page > 0) {
+                if (this.page > this.minPages()) {
                     this.hideSelectors(-1, this.onArrowClicked);
                 }
                 break;
             case "arrow-right":
-                if (this.page < Math.floor(this.cache.json.get("levels").length / 9)) {
+                if (this.page < this.maxPages()) {
                     this.hideSelectors(1, this.onArrowClicked);
                 }
                 break;

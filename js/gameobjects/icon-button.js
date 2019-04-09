@@ -27,10 +27,19 @@ class IconButton extends Phaser.GameObjects.Container {
         this.button_type = type;
     }
 
+    enable() {
+        this.isDisabled = false;
+        //this.background.setFrame(1);
+        this.alpha = 1;
+        this.icon.tint = this.icon.original_tint;
+        this.background.setInteractive();
+    }
+
     disable() {
         this.isDisabled = true;
         //this.background.setFrame(1);
         this.alpha = 0.8;
+        this.icon.original_tint = this.icon.tint;
         this.icon.tint = 0x727685;
     	this.background.disableInteractive();
     }
