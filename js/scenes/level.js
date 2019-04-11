@@ -61,6 +61,7 @@ class LevelScene extends Phaser.Scene {
         let spacing = (this.game.config.width - (this.grid.width*100)) / (this.grid.width + 1);
 
         this.levels_container.removeAll(true);
+        let max_y = 0;
         for (let y=0; y<this.grid.height; y++) {
             for (let x=0; x<this.grid.width; x++) {
                 if (index < this.levels.length) {
@@ -71,6 +72,10 @@ class LevelScene extends Phaser.Scene {
 
                     selector.destination_y = selector.y;
 
+                    if (selector.y > max_y) {
+                        max_y = selector.y;
+                    }
+
                     selector.y = this.game.config.height;
                 }
             }
@@ -78,7 +83,7 @@ class LevelScene extends Phaser.Scene {
 
         let button = new CustomButton(this, "Retour", "back");
         button.x = (this.game.config.width - button.getBounds().width) / 2;
-        button.y = 340;
+        button.y = max_y + 120;
         button.destination_y = button.y;
         button.y = this.game.config.height;
         this.levels_container.add(button);
