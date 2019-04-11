@@ -4,14 +4,26 @@ class LevelScene extends Phaser.Scene {
             key:'LevelScene'
         });
     }
+
+    init(config) {
+        this.config = config;
+    }
  
     create() {
+        this.typeID = this.config.typeID;
+
+        let type_name = this.cache.json.get("types").filter(single_type => single_type['id'] == this.typeID)[0]['name'];
+
         let index = 1;
         this.grid = {width: 3, height: 3};
         this.limit = this.grid.width * this.grid.height;
 
         this.panel_container = this.add.container(0, 0);
         this.levels_container = this.add.container(0, 70);
+
+        let title = this.add.bitmapText(0, 0, "font:gui", type_name, 20, Phaser.GameObjects.BitmapText.ALIGN_CENTER).setOrigin(0);
+        title.x = (this.game.config.width - title.getTextBounds().local.width) / 2;
+        title.y = 24;
 
         this.btn_previous_page = new IconButton(this, "arrow-left", 0, "arrow-left");
         this.btn_previous_page.x = this.btn_previous_page.y = 10;
@@ -21,6 +33,8 @@ class LevelScene extends Phaser.Scene {
         this.btn_next_page.x = this.game.config.width - 10 - this.btn_next_page.getBounds().width;
         this.btn_next_page.y = 10;
         this.panel_container.add(this.btn_next_page);
+
+        this.levels = this.cache.json.get("levels").filter(single_level => single_level['typeID'] == this.typeID);
 
         this.page = 0;
         this.createSelectors();
@@ -49,8 +63,8 @@ class LevelScene extends Phaser.Scene {
         this.levels_container.removeAll(true);
         for (let y=0; y<this.grid.height; y++) {
             for (let x=0; x<this.grid.width; x++) {
-                if (index < this.cache.json.get('levels').length) {
-                    let selector = new LevelSelector(this, index++, this.cache.json.get('levels'), savegame);
+                if (index < this.levels.length) {
+                    let selector = new LevelSelector(this, index++, this.levels, savegame);
                     selector.x = ((100 + spacing) * x) + spacing;
                     selector.y = ((100 + spacing) * y) + spacing;
                     this.levels_container.add(selector);
@@ -61,6 +75,13 @@ class LevelScene extends Phaser.Scene {
                 }
             }
         }
+
+        let button = new CustomButton(this, "Retour", "back");
+        button.x = (this.game.config.width - button.getBounds().width) / 2;
+        button.y = 340;
+        button.destination_y = button.y;
+        button.y = this.game.config.height;
+        this.levels_container.add(button);
 
         for (let i=0; i<this.levels_container.count(); i++) {
             if (this.levels_container.getAt(i) != null) {
@@ -82,7 +103,7 @@ class LevelScene extends Phaser.Scene {
     }
 
     maxPages() {
-        return Math.floor(this.cache.json.get("levels").length / this.limit);
+        return Math.floor(this.levels.length / this.limit);
     }
 
     hideSelectors(params, callback) {
@@ -156,7 +177,16 @@ class LevelScene extends Phaser.Scene {
                     this.hideSelectors(1, this.onArrowClicked);
                 }
                 break;
+            case "back":
+                this.hideSelectors(0, this.onBtnBackClicked);
+                break;
+            default:
+                console.log("Unknown type: " + button.getType());
         }
+    }
+
+    onBtnBackClicked() {
+        this.scene.start('TypeScene');
     }
 
     onPopupButtonClicked(popup_type, button_text) {

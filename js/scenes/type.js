@@ -15,10 +15,10 @@ class TypeScene extends Phaser.Scene {
    
         let savegame = this.game.load();
 
-        this.cache.json.get("types").forEach(single_button => {
+        this.cache.json.get("types").forEach(single_type => {
             let current = 0;
-            let total = 10;
-            let button = new TypeButton(this, single_button, current, total);
+            let total = this.cache.json.get("levels").filter(single_level => single_level['typeID'] == single_type['id']).length;
+            let button = new TypeButton(this, single_type, current, total);
             button.x = (this.game.config.width - button.getBounds().width) / 2;
             button.y = this.buttons_container.count() * (button.getBounds().height + 10);
             button.destination_y = button.y;
@@ -69,10 +69,10 @@ class TypeScene extends Phaser.Scene {
         }
     }
 
-    onButtonsHidden(button) {
+    onButtonsHidden(tweens, tween, button) {
         let active_tweens = this.tweens.getAllTweens().filter(tween => tween.isPlaying());
         if (active_tweens.length == 1) {
-            console.log(button);
+            this.scene.start('LevelScene', {typeID:button.typeID});
         }
     }
 

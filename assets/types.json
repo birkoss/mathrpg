@@ -5,7 +5,7 @@
 		"template": "forest"
 	},
 	{
-		"id": "substration",
+		"id": "substraction",
 		"name": "Soustractions",
 		"template": "forest",
 		"unlock": [
@@ -24,18 +24,6 @@
 			{
 				"type": "reach",
 				"typeID": "substration",
-				"limit": 10
-			}
-		]
-	},
-	{
-		"id": "mixte",
-		"name": "Mixtes",
-		"template": "forest",
-		"unlock": [
-			{
-				"type": "reach",
-				"typeID": "multiplication",
 				"limit": 10
 			}
 		]

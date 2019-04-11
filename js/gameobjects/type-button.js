@@ -7,6 +7,8 @@ class TypeButton extends Phaser.GameObjects.Container {
 
         this.buttonData = buttonData;
 
+        this.typeID = buttonData['id'];
+
         if (this.buttonData['unlock'] != undefined) {
             this.unlockData = this.buttonData['unlock'];
             this.isLocked = true;
@@ -33,7 +35,6 @@ class TypeButton extends Phaser.GameObjects.Container {
             padlock.y = (this.background.height) / 2;
             this.add(padlock);
         }
-
 
         this.background.setInteractive();
         this.background.on("pointerdown", () => this.onPointerDown());

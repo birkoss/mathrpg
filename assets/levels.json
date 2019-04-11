@@ -1,494 +1,2157 @@
-[
-	{
-		"id": "001",
-		"enemy": {
-			"name": "Rat gris",
-			"frames": [223, 241],
-			"health": 60
-		},
-		"questions": [
-			{
-				"quantity": 8,
-				"first_operand_range": [2, 5],
-				"second_operand_range": [2, 5],
-				"operator": "+"
-			},
-			{
-				"quantity": 2,
-				"first_operand_range": [5, 7],
-				"second_operand_range": [5, 7],
-				"operator": "+"
-			}
-		]
+[{
+	"id": "001",
+	"enemy": {
+		"name": "Rat gris",
+		"frames": [223, 241],
+		"health": 60
 	},
-	{
-		"id": "002",
-		"enemy": {
-			"name": "Loup gris",
-			"frames": [228, 246],
-			"health": 62
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "001"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 8,
-				"first_operand_range": [3, 6],
-				"second_operand_range": [3, 6],
-				"operator": "+"
-			},
-			{
-				"quantity": 2,
-				"first_operand_range": [5, 8],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			}
-		]
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [1, 1],
+		"operator": "+",
+		"second_operand_range": [2, 12]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "002",
+	"enemy": {
+		"name": "Loup gris",
+		"frames": [228, 246],
+		"health": 60
 	},
-	{
-		"id": "003",
-		"enemy": {
-			"name": "Cobra",
-			"frames": [225, 243],
-			"health": 64
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "002"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 3,
-				"first_operand_range": [3, 6],
-				"second_operand_range": [3, 6],
-				"operator": "+"
-			},
-			{
-				"quantity": 7,
-				"first_operand_range": [5, 8],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "001"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [2, 2],
+		"operator": "+",
+		"second_operand_range": [3, 13]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "003",
+	"enemy": {
+		"name": "Cobra",
+		"frames": [225, 243],
+		"health": 60
 	},
-	{
-		"id": "004",
-		"enemy": {
-			"name": "Slime mauve",
-			"frames": [216, 234],
-			"health": 66
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "003"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 3,
-				"first_operand_range": [3, 6],
-				"second_operand_range": [3, 6],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [5, 8],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 3,
-				"first_operand_range": [6, 8],
-				"second_operand_range": [3, 5],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "002"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [3, 3],
+		"operator": "+",
+		"second_operand_range": [4, 14]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "004",
+	"enemy": {
+		"name": "Slime mauve",
+		"frames": [216, 234],
+		"health": 60
 	},
-	{
-		"id": "005",
-		"enemy": {
-			"name": "Fantôme",
-			"frames": [294, 312],
-			"health": 66
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "004"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [3, 6],
-				"second_operand_range": [3, 6],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [5, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [6, 8],
-				"second_operand_range": [3, 5],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "003"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [4, 4],
+		"operator": "+",
+		"second_operand_range": [5, 15]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "005",
+	"enemy": {
+		"name": "Fant\u00f4me",
+		"frames": [294, 312],
+		"health": 60
 	},
-	{
-		"id": "006",
-		"enemy": {
-			"name": "Squelette",
-			"frames": [290, 308],
-			"health": 70
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "005"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [3, 6],
-				"second_operand_range": [3, 6],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [5, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [6, 8],
-				"second_operand_range": [3, 5],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "004"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [5, 5],
+		"operator": "+",
+		"second_operand_range": [6, 16]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "006",
+	"enemy": {
+		"name": "Squelette",
+		"frames": [290, 308],
+		"health": 60
 	},
-	{
-		"id": "007",
-		"enemy": {
-			"name": "Ours brun",
-			"frames": [332, 350],
-			"health": 72
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "006"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 4,
-				"first_operand_range": [5, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [6, 8],
-				"second_operand_range": [3, 5],
-				"operator": "-"
-			},
-			{
-				"quantity": 3,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "005"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [6, 6],
+		"operator": "+",
+		"second_operand_range": [7, 17]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "007",
+	"enemy": {
+		"name": "Ours brun",
+		"frames": [332, 350],
+		"health": 60
 	},
-	{
-		"id": "008",
-		"enemy": {
-			"name": "Scorpion géant",
-			"frames": [335, 353],
-			"health": 74
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "007"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [5, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 4,
-				"first_operand_range": [6, 8],
-				"second_operand_range": [3, 5],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "006"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [7, 7],
+		"operator": "+",
+		"second_operand_range": [8, 18]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "008",
+	"enemy": {
+		"name": "Scorpion g\u00e9ant",
+		"frames": [335, 353],
+		"health": 60
 	},
-	{
-		"id": "009",
-		"enemy": {
-			"name": "Chauve-Souris noire",
-			"frames": [218, 236],
-			"health": 76
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "008"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 1,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "007"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [8, 8],
+		"operator": "+",
+		"second_operand_range": [9, 19]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "009",
+	"enemy": {
+		"name": "Chauve-Souris noire",
+		"frames": [218, 236],
+		"health": 60
 	},
-	{
-		"id": "010",
-		"enemy": {
-			"name": "Voleur",
-			"frames": [1, 19],
-			"health": 80
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "009"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "008"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [9, 9],
+		"operator": "+",
+		"second_operand_range": [10, 20]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "010",
+	"enemy": {
+		"name": "Voleur",
+		"frames": [1, 19],
+		"health": 60
 	},
-	{
-		"id": "011",
-		"enemy": {
-			"name": "Navet",
-			"frames": [362, 380],
-			"health": 80
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "010"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "009"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [10, 10],
+		"operator": "+",
+		"second_operand_range": [11, 21]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "011",
+	"enemy": {
+		"name": "Navet",
+		"frames": [362, 380],
+		"health": 60
 	},
-	{
-		"id": "012",
-		"enemy": {
-			"name": "Yéti",
-			"frames": [328, 346],
-			"health": 82
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "011"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "010"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [11, 11],
+		"operator": "+",
+		"second_operand_range": [12, 22]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "012",
+	"enemy": {
+		"name": "Y\u00e9ti",
+		"frames": [328, 346],
+		"health": 60
 	},
-	{
-		"id": "012",
-		"enemy": {
-			"name": "Wisp",
-			"frames": [360, 378],
-			"health": 84
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "011"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "011"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [12, 12],
+		"operator": "+",
+		"second_operand_range": [13, 23]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "013",
+	"enemy": {
+		"name": "Wisp",
+		"frames": [360, 378],
+		"health": 60
 	},
-	{
-		"id": "013",
-		"enemy": {
-			"name": "Oeil",
-			"frames": [368, 386],
-			"health": 90
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "012"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 3,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			}
-		]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "012"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [13, 13],
+		"operator": "+",
+		"second_operand_range": [14, 24]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "014",
+	"enemy": {
+		"name": "Oeil",
+		"frames": [368, 386],
+		"health": 60
 	},
-	{
-		"id": "014",
-		"enemy": {
-			"name": "Feu",
-			"frames": [376, 394],
-			"health": 92
-		},
-		"unlock": [
-			{
-				"type": "beat",
-				"levelID": "015"
-			}
-		],
-		"questions": [
-			{
-				"quantity": 2,
-				"first_operand_range": [6, 10],
-				"second_operand_range": [5, 8],
-				"operator": "+"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [7, 10],
-				"second_operand_range": [6, 9],
-				"operator": "-"
-			},
-			{
-				"quantity": 5,
-				"first_operand_range": [10, 14],
-				"second_operand_range": [5, 8],
-				"operator": "-"
-			},
-			{
-				"quantity": 1,
-				"first_operand_range": [11, 14],
-				"second_operand_range": [7, 9],
-				"operator": "-"
-			}
-		]
-	}
-]
+	"unlock": [{
+		"type": "beat",
+		"levelID": "013"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [14, 14],
+		"operator": "+",
+		"second_operand_range": [15, 25]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "015",
+	"enemy": {
+		"name": "Feu",
+		"frames": [376, 394],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "014"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [15, 15],
+		"operator": "+",
+		"second_operand_range": [16, 26]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "016",
+	"enemy": {
+		"name": "Nain",
+		"frames": [110, 128],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "015"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [16, 16],
+		"operator": "+",
+		"second_operand_range": [17, 27]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "017",
+	"enemy": {
+		"name": "Bandit",
+		"frames": [36, 54],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "016"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [17, 17],
+		"operator": "+",
+		"second_operand_range": [18, 28]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "018",
+	"enemy": {
+		"name": "Rat brun",
+		"frames": [224, 242],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "017"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [18, 18],
+		"operator": "+",
+		"second_operand_range": [19, 29]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "019",
+	"enemy": {
+		"name": "Scarab\u00e9e",
+		"frames": [226, 244],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "018"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [19, 19],
+		"operator": "+",
+		"second_operand_range": [20, 30]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "020",
+	"enemy": {
+		"name": "Pigeon",
+		"frames": [231, 249],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "019"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [20, 20],
+		"operator": "+",
+		"second_operand_range": [21, 31]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "021",
+	"enemy": {
+		"name": "Chevalier",
+		"frames": [0, 18],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "020"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [21, 21],
+		"operator": "+",
+		"second_operand_range": [22, 43]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "022",
+	"enemy": {
+		"name": "Alchimiste",
+		"frames": [78, 96],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "021"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [22, 22],
+		"operator": "+",
+		"second_operand_range": [23, 44]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "023",
+	"enemy": {
+		"name": "Nain",
+		"frames": [111, 129],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "022"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [23, 23],
+		"operator": "+",
+		"second_operand_range": [24, 45]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "024",
+	"enemy": {
+		"name": "Guerrier l\u00e9zard",
+		"frames": [152, 170],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "023"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [24, 24],
+		"operator": "+",
+		"second_operand_range": [25, 46]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "025",
+	"enemy": {
+		"name": "Golem de pierre",
+		"frames": [190, 208],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "024"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [25, 25],
+		"operator": "+",
+		"second_operand_range": [26, 47]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "026",
+	"enemy": {
+		"name": "Slime verte",
+		"frames": [217, 235],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "025"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [26, 26],
+		"operator": "+",
+		"second_operand_range": [27, 48]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "027",
+	"enemy": {
+		"name": "Chauve-Souris rouge",
+		"frames": [219, 237],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "026"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [27, 27],
+		"operator": "+",
+		"second_operand_range": [28, 49]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "028",
+	"enemy": {
+		"name": "Araign\u00e9e noire",
+		"frames": [222, 240],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "027"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [28, 28],
+		"operator": "+",
+		"second_operand_range": [29, 50]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "029",
+	"enemy": {
+		"name": "Loup brun",
+		"frames": [229, 247],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "028"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [29, 29],
+		"operator": "+",
+		"second_operand_range": [30, 51]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "030",
+	"enemy": {
+		"name": "Corbeau",
+		"frames": [233, 251],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "029"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [30, 30],
+		"operator": "+",
+		"second_operand_range": [31, 52]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "031",
+	"enemy": {
+		"name": "Zombie",
+		"frames": [288, 306],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "030"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [31, 31],
+		"operator": "+",
+		"second_operand_range": [32, 53]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "032",
+	"enemy": {
+		"name": "Momie",
+		"frames": [295, 313],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "031"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [32, 32],
+		"operator": "+",
+		"second_operand_range": [33, 54]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "033",
+	"enemy": {
+		"name": "Y\u00e9ti",
+		"frames": [329, 347],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "032"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [33, 33],
+		"operator": "+",
+		"second_operand_range": [34, 55]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "034",
+	"enemy": {
+		"name": "Ours gris",
+		"frames": [333, 351],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "033"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [34, 34],
+		"operator": "+",
+		"second_operand_range": [35, 56]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "035",
+	"enemy": {
+		"name": "Scorpion",
+		"frames": [336, 354],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "034"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [35, 35],
+		"operator": "+",
+		"second_operand_range": [36, 57]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "036",
+	"enemy": {
+		"name": "F\u00e9e",
+		"frames": [340, 358],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "035"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [36, 36],
+		"operator": "+",
+		"second_operand_range": [37, 58]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "037",
+	"enemy": {
+		"name": "Yeux",
+		"frames": [369, 387],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "036"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [37, 37],
+		"operator": "+",
+		"second_operand_range": [38, 59]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "038",
+	"enemy": {
+		"name": "Gel\u00e9e bleu",
+		"frames": [371, 389],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "037"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [38, 38],
+		"operator": "+",
+		"second_operand_range": [39, 60]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "039",
+	"enemy": {
+		"name": "Gel\u00e9e verte",
+		"frames": [374, 392],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "038"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [39, 39],
+		"operator": "+",
+		"second_operand_range": [40, 61]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "040",
+	"enemy": {
+		"name": "Gel\u00e9e rouge",
+		"frames": [375, 393],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "039"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [40, 40],
+		"operator": "+",
+		"second_operand_range": [41, 62]
+	}],
+	"typeID": "addition"
+}, {
+	"id": "041",
+	"enemy": {
+		"name": "Navet pourri",
+		"frames": [363, 381],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "040"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [2, 12],
+		"operator": "-",
+		"second_operand_range": [1, 1]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "042",
+	"enemy": {
+		"name": "Vampire",
+		"frames": [300, 318],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "041"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [3, 13],
+		"operator": "-",
+		"second_operand_range": [2, 2]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "043",
+	"enemy": {
+		"name": "Pharaon",
+		"frames": [296, 314],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "042"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [4, 14],
+		"operator": "-",
+		"second_operand_range": [3, 3]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "044",
+	"enemy": {
+		"name": "Ombre",
+		"frames": [293, 311],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "043"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [5, 15],
+		"operator": "-",
+		"second_operand_range": [4, 4]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "045",
+	"enemy": {
+		"name": "Squelette Archer",
+		"frames": [291, 309],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "044"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [6, 16],
+		"operator": "-",
+		"second_operand_range": [5, 5]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "046",
+	"enemy": {
+		"name": "Troll",
+		"frames": [260, 278],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "045"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [7, 17],
+		"operator": "-",
+		"second_operand_range": [6, 6]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "047",
+	"enemy": {
+		"name": "Troll Capitaine",
+		"frames": [261, 279],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "046"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [8, 18],
+		"operator": "-",
+		"second_operand_range": [7, 7]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "048",
+	"enemy": {
+		"name": "Cyclope",
+		"frames": [262, 280],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "047"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [9, 19],
+		"operator": "-",
+		"second_operand_range": [8, 8]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "049",
+	"enemy": {
+		"name": "Oiseau bleu",
+		"frames": [232, 250],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "048"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [10, 20],
+		"operator": "-",
+		"second_operand_range": [9, 9]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "050",
+	"enemy": {
+		"name": "Loup noir",
+		"frames": [230, 248],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "049"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [11, 21],
+		"operator": "-",
+		"second_operand_range": [10, 10]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "051",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "050"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [12, 22],
+		"operator": "-",
+		"second_operand_range": [11, 11]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "052",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "051"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [13, 23],
+		"operator": "-",
+		"second_operand_range": [12, 12]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "053",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "052"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [14, 24],
+		"operator": "-",
+		"second_operand_range": [13, 13]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "054",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "053"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [15, 25],
+		"operator": "-",
+		"second_operand_range": [14, 14]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "055",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "054"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [16, 26],
+		"operator": "-",
+		"second_operand_range": [15, 15]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "056",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "055"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [17, 27],
+		"operator": "-",
+		"second_operand_range": [16, 16]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "057",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "056"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [18, 28],
+		"operator": "-",
+		"second_operand_range": [17, 17]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "058",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "057"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [19, 29],
+		"operator": "-",
+		"second_operand_range": [18, 18]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "059",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "058"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [20, 30],
+		"operator": "-",
+		"second_operand_range": [19, 19]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "060",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "059"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [21, 31],
+		"operator": "-",
+		"second_operand_range": [20, 20]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "061",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "060"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [22, 43],
+		"operator": "-",
+		"second_operand_range": [21, 21]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "062",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "061"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [23, 44],
+		"operator": "-",
+		"second_operand_range": [22, 22]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "063",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "062"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [24, 45],
+		"operator": "-",
+		"second_operand_range": [23, 23]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "064",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "063"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [25, 46],
+		"operator": "-",
+		"second_operand_range": [24, 24]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "065",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "064"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [26, 47],
+		"operator": "-",
+		"second_operand_range": [25, 25]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "066",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "065"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [27, 48],
+		"operator": "-",
+		"second_operand_range": [26, 26]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "067",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "066"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [28, 49],
+		"operator": "-",
+		"second_operand_range": [27, 27]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "068",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "067"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [29, 50],
+		"operator": "-",
+		"second_operand_range": [28, 28]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "069",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "068"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [30, 51],
+		"operator": "-",
+		"second_operand_range": [29, 29]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "070",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "069"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [31, 52],
+		"operator": "-",
+		"second_operand_range": [30, 30]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "071",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "070"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [32, 53],
+		"operator": "-",
+		"second_operand_range": [31, 31]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "072",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "071"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [33, 54],
+		"operator": "-",
+		"second_operand_range": [32, 32]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "073",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "072"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [34, 55],
+		"operator": "-",
+		"second_operand_range": [33, 33]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "074",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "073"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [35, 56],
+		"operator": "-",
+		"second_operand_range": [34, 34]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "075",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "074"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [36, 57],
+		"operator": "-",
+		"second_operand_range": [35, 35]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "076",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "075"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [37, 58],
+		"operator": "-",
+		"second_operand_range": [36, 36]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "077",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "076"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [38, 59],
+		"operator": "-",
+		"second_operand_range": [37, 37]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "078",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "077"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [39, 60],
+		"operator": "-",
+		"second_operand_range": [38, 38]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "079",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "078"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [40, 61],
+		"operator": "-",
+		"second_operand_range": [39, 39]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "080",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "079"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [41, 62],
+		"operator": "-",
+		"second_operand_range": [40, 40]
+	}],
+	"typeID": "substraction"
+}, {
+	"id": "081",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "080"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [1, 1],
+		"operator": "*",
+		"second_operand_range": [2, 12]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "082",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "081"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [2, 2],
+		"operator": "*",
+		"second_operand_range": [3, 13]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "083",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "082"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [3, 3],
+		"operator": "*",
+		"second_operand_range": [4, 14]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "084",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "083"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [4, 4],
+		"operator": "*",
+		"second_operand_range": [5, 15]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "085",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "084"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [5, 5],
+		"operator": "*",
+		"second_operand_range": [6, 16]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "086",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "085"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [6, 6],
+		"operator": "*",
+		"second_operand_range": [7, 17]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "087",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "086"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [7, 7],
+		"operator": "*",
+		"second_operand_range": [8, 18]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "088",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "087"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [8, 8],
+		"operator": "*",
+		"second_operand_range": [9, 19]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "089",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "088"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [9, 9],
+		"operator": "*",
+		"second_operand_range": [10, 20]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "090",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "089"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [10, 10],
+		"operator": "*",
+		"second_operand_range": [11, 21]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "091",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "090"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [11, 11],
+		"operator": "*",
+		"second_operand_range": [12, 22]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "092",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "091"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [12, 12],
+		"operator": "*",
+		"second_operand_range": [13, 23]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "093",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "060"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [13, 13],
+		"operator": "*",
+		"second_operand_range": [14, 24]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "094",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "093"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [14, 14],
+		"operator": "*",
+		"second_operand_range": [15, 25]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "095",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "094"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [15, 15],
+		"operator": "*",
+		"second_operand_range": [16, 26]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "096",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "095"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [16, 16],
+		"operator": "*",
+		"second_operand_range": [17, 27]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "097",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "096"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [17, 17],
+		"operator": "*",
+		"second_operand_range": [18, 28]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "098",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "097"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [18, 18],
+		"operator": "*",
+		"second_operand_range": [19, 29]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "099",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "098"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [19, 19],
+		"operator": "*",
+		"second_operand_range": [20, 30]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "100",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "099"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [20, 20],
+		"operator": "*",
+		"second_operand_range": [21, 31]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "101",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "100"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [21, 21],
+		"operator": "*",
+		"second_operand_range": [22, 43]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "102",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "101"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [22, 22],
+		"operator": "*",
+		"second_operand_range": [23, 44]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "103",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "102"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [23, 23],
+		"operator": "*",
+		"second_operand_range": [24, 45]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "104",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "103"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [24, 24],
+		"operator": "*",
+		"second_operand_range": [25, 46]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "105",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "104"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [25, 25],
+		"operator": "*",
+		"second_operand_range": [26, 47]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "106",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "105"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [26, 26],
+		"operator": "*",
+		"second_operand_range": [27, 48]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "107",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "106"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [27, 27],
+		"operator": "*",
+		"second_operand_range": [28, 49]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "108",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "107"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [28, 28],
+		"operator": "*",
+		"second_operand_range": [29, 50]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "109",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "108"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [29, 29],
+		"operator": "*",
+		"second_operand_range": [30, 51]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "110",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "109"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [30, 30],
+		"operator": "*",
+		"second_operand_range": [31, 52]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "111",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "110"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [31, 31],
+		"operator": "*",
+		"second_operand_range": [32, 53]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "112",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "111"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [32, 32],
+		"operator": "*",
+		"second_operand_range": [33, 54]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "113",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "112"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [33, 33],
+		"operator": "*",
+		"second_operand_range": [34, 55]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "114",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "113"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [34, 34],
+		"operator": "*",
+		"second_operand_range": [35, 56]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "115",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "114"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [35, 35],
+		"operator": "*",
+		"second_operand_range": [36, 57]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "116",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "115"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [36, 36],
+		"operator": "*",
+		"second_operand_range": [37, 58]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "117",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "116"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [37, 37],
+		"operator": "*",
+		"second_operand_range": [38, 59]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "118",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "117"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [38, 38],
+		"operator": "*",
+		"second_operand_range": [39, 60]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "119",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "118"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [39, 39],
+		"operator": "*",
+		"second_operand_range": [40, 61]
+	}],
+	"typeID": "multiplication"
+}, {
+	"id": "120",
+	"enemy": {
+		"name": "",
+		"frames": [],
+		"health": 60
+	},
+	"unlock": [{
+		"type": "beat",
+		"levelID": "119"
+	}],
+	"questions": [{
+		"quantity": 10,
+		"first_operand_range": [40, 40],
+		"operator": "*",
+		"second_operand_range": [41, 62]
+	}],
+	"typeID": "multiplication"
+}]
