@@ -1,4 +1,4 @@
-Knight M, 0, 18
+
 
 Ranger M, 2, 20
 Wizard M, 3, 21
@@ -16,7 +16,7 @@ Shaman F, 14, 32
 Berserker F, 15, 33
 Swordsman F, 16, 34
 Paladin F, 17, 35
-Bandit, 36, 54
+
 Hooded Human, 37, 55
 Human M, 38, 56
 Human F, 39, 57
@@ -40,7 +40,7 @@ Human M, 74, 92
 Human F, 75, 93
 Merchant, 76, 94
 Slave, 77, 95
-Alchemist, 78, 96
+
 Prophet, 79, 97
 King, 80, 98
 Queen, 81, 99
@@ -54,8 +54,8 @@ Guard Alt F, 88, 106
 Knight Alt, 89, 107
 Assassin, 108, 126
 Bandit, 109, 127
-Dwarf, 110, 128
-Dwarf Alt, 111, 129
+
+
 Dwarf Priest, 112, 130
 Drow Assassin, 113, 131
 Drow Fighter, 114, 132
@@ -78,7 +78,7 @@ Wood Elf Fighter F, 148, 166
 Wood Elf Shield Fighter F, 149, 167
 Wood Elf Ranger F, 150, 168
 Wood Elf Druid F, 151, 169
-Lizardman Warrior, 152, 170
+
 Lizardman Archer, 153, 171
 Lizardman Captain, 154, 172
 Lizardman Shaman, 155, 173
@@ -98,7 +98,7 @@ Minotaur Alt, 186, 204
 Elder Demon, 187, 205
 Fire Demon, 188, 206
 Horned Demon, 189, 207
-Stone Golem, 190, 208
+
 Mud Golem, 191, 209
 Flesh Golem, 192, 210
 Lava Golem, 193, 211
@@ -107,23 +107,23 @@ Djinn, 195, 213
 Treant, 196, 214
 Mimic, 197, 215
 
-Green Slime, 217, 235
 
-Red Bat, 219, 237
+
+
 Beholder, 220, 238
 Red Spider, 221, 239
 Black Spider, 222, 240
 
-Brown Rat, 224, 242
 
-Beetle, 226, 244
+
+
 Fire Beetle, 227, 245
 
-Brown Wolf, 229, 247
-Black Wolf, 230, 248
-Dove/Pigeon, 231, 249
-Blue Bird, 232, 250
-Crow/Raven, 233, 251
+
+
+
+
+
 Goblin Fighter, 252, 270
 Goblin Archer, 253, 271
 Goblin Captain, 254, 272
@@ -132,9 +132,9 @@ Goblin Mystic, 256, 274
 Orc Fighter, 257, 275
 Orc Captain, 258, 276
 Orc Mystic, 259, 277
-Troll, 260, 278
-Troll Captain, 261, 279
-Cycops, 262, 280
+
+
+
 Cyclops Alt, 263, 281
 Death Knight, 264, 282
 Death Knight Alt, 265, 283
@@ -142,19 +142,19 @@ Death Knight Alt, 266, 284
 Earth Elemental, 267, 285
 Ice/Water Elemental, 268, 286
 Air Elemental, 269, 287
-Zombie, 288, 306
+
 Headless Zombie, 289, 307
 
-Skeleton Archer, 291, 309
-Skeleton Warrior, 292, 310
-Shadow, 293, 311
 
-Mummy, 295, 313
-Pharoah, 296, 314
+Skeleton Warrior, 292, 310
+
+
+
+
 Necromancer, 297, 315
 Dark Wizard, 298, 316
 Death, 299, 317
-Vampire, 300, 318
+
 Vampire Alt, 301, 319
 Vampire Lord, 302, 320
 Witch, 303, 321
@@ -165,34 +165,34 @@ Purple Dragon, 325, 343
 Gold Dragon, 326, 344
 Green Dragon, 327, 345
 
-Yeti Alt, 329, 347
+
 Giant Leech, 330, 348
 Giant Worm, 331, 349
 
-Grey Bear, 333, 351
+
 Polar Bear, 334, 352
 
-Scorpion Alt, 336, 354
+
 Scorpion Alt, 337, 355
 Ettin, 338, 356
 Ettin Alt, 339, 357
-Pixie/Fairy/Sprite, 340, 358
+
 Imp/Demon/Devil, 341, 359
 
 Wisp Alt, 361, 379
 
-Rotten Turnip, 363, 381
+
 Fire Minion, 364, 382
 Ice Minion, 365, 383
 Smoke Minion, 366, 384
 Mud Minion, 367, 385
-Eye, 368, 386
-Eyes, 369, 387
+
+
 Red Specter, 370, 388
-Blue Specter, 371, 389
+
 Brown Specter, 372, 390
-Blue Jelly, 373, 391
-Green Jelly, 374, 392
-Red Jelly, 375, 393
+
+
+
 
 Cold Flame, 377, 395

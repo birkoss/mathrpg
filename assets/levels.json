@@ -26,7 +26,7 @@
 		"enemy": {
 			"name": "Loup gris",
 			"frames": [228, 246],
-			"health": 64
+			"health": 62
 		},
 		"unlock": [
 			{
@@ -54,7 +54,7 @@
 		"enemy": {
 			"name": "Cobra",
 			"frames": [225, 243],
-			"health": 70
+			"health": 64
 		},
 		"unlock": [
 			{
@@ -82,7 +82,7 @@
 		"enemy": {
 			"name": "Slime mauve",
 			"frames": [216, 234],
-			"health": 77
+			"health": 66
 		},
 		"unlock": [
 			{
@@ -116,7 +116,7 @@
 		"enemy": {
 			"name": "Fantôme",
 			"frames": [294, 312],
-			"health": 85
+			"health": 66
 		},
 		"unlock": [
 			{
@@ -150,7 +150,7 @@
 		"enemy": {
 			"name": "Squelette",
 			"frames": [290, 308],
-			"health": 90
+			"health": 70
 		},
 		"unlock": [
 			{
@@ -172,7 +172,7 @@
 				"operator": "+"
 			},
 			{
-				"quantity": 4,
+				"quantity": 5,
 				"first_operand_range": [6, 8],
 				"second_operand_range": [3, 5],
 				"operator": "-"
@@ -184,7 +184,7 @@
 		"enemy": {
 			"name": "Ours brun",
 			"frames": [332, 350],
-			"health": 92
+			"health": 72
 		},
 		"unlock": [
 			{
@@ -206,7 +206,7 @@
 				"operator": "-"
 			},
 			{
-				"quantity": 2,
+				"quantity": 3,
 				"first_operand_range": [10, 14],
 				"second_operand_range": [5, 8],
 				"operator": "-"
@@ -218,7 +218,7 @@
 		"enemy": {
 			"name": "Scorpion géant",
 			"frames": [335, 353],
-			"health": 94
+			"health": 74
 		},
 		"unlock": [
 			{
@@ -240,7 +240,7 @@
 				"operator": "-"
 			},
 			{
-				"quantity": 4,
+				"quantity": 5,
 				"first_operand_range": [10, 14],
 				"second_operand_range": [5, 8],
 				"operator": "-"
@@ -252,7 +252,7 @@
 		"enemy": {
 			"name": "Chauve-Souris noire",
 			"frames": [218, 236],
-			"health": 96
+			"health": 76
 		},
 		"unlock": [
 			{
@@ -262,7 +262,7 @@
 		],
 		"questions": [
 			{
-				"quantity": 2,
+				"quantity": 1,
 				"first_operand_range": [6, 10],
 				"second_operand_range": [5, 8],
 				"operator": "+"
@@ -286,7 +286,7 @@
 		"enemy": {
 			"name": "Voleur",
 			"frames": [1, 19],
-			"health": 96
+			"health": 80
 		},
 		"unlock": [
 			{
@@ -320,7 +320,7 @@
 		"enemy": {
 			"name": "Navet",
 			"frames": [362, 380],
-			"health": 96
+			"health": 80
 		},
 		"unlock": [
 			{
@@ -354,7 +354,7 @@
 		"enemy": {
 			"name": "Yéti",
 			"frames": [328, 346],
-			"health": 96
+			"health": 82
 		},
 		"unlock": [
 			{
@@ -388,7 +388,7 @@
 		"enemy": {
 			"name": "Wisp",
 			"frames": [360, 378],
-			"health": 96
+			"health": 84
 		},
 		"unlock": [
 			{
@@ -422,7 +422,7 @@
 		"enemy": {
 			"name": "Oeil",
 			"frames": [368, 386],
-			"health": 96
+			"health": 90
 		},
 		"unlock": [
 			{
@@ -432,7 +432,7 @@
 		],
 		"questions": [
 			{
-				"quantity": 2,
+				"quantity": 3,
 				"first_operand_range": [6, 10],
 				"second_operand_range": [5, 8],
 				"operator": "+"
@@ -456,7 +456,7 @@
 		"enemy": {
 			"name": "Feu",
 			"frames": [376, 394],
-			"health": 96
+			"health": 92
 		},
 		"unlock": [
 			{
@@ -481,6 +481,12 @@
 				"quantity": 5,
 				"first_operand_range": [10, 14],
 				"second_operand_range": [5, 8],
+				"operator": "-"
+			},
+			{
+				"quantity": 1,
+				"first_operand_range": [11, 14],
+				"second_operand_range": [7, 9],
 				"operator": "-"
 			}
 		]

@@ -1,0 +1,43 @@
+[
+	{
+		"id": "addition",
+		"name": "Additions",
+		"template": "forest"
+	},
+	{
+		"id": "substration",
+		"name": "Soustractions",
+		"template": "forest",
+		"unlock": [
+			{
+				"type": "reach",
+				"typeID": "addition",
+				"limit": 10
+			}
+		]
+	},
+	{
+		"id": "multiplication",
+		"name": "Multiplications",
+		"template": "forest",
+		"unlock": [
+			{
+				"type": "reach",
+				"typeID": "substration",
+				"limit": 10
+			}
+		]
+	},
+	{
+		"id": "mixte",
+		"name": "Mixtes",
+		"template": "forest",
+		"unlock": [
+			{
+				"type": "reach",
+				"typeID": "multiplication",
+				"limit": 10
+			}
+		]
+	}
+]

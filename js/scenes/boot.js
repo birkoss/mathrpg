@@ -35,10 +35,11 @@ class BootScene extends Phaser.Scene {
         this.load.bitmapFont('font:gui', 'assets/fonts/gui.png', 'assets/fonts/gui.xml');
 
         this.load.json('levels', 'assets/levels.json');
+        this.load.json('types', 'assets/types.json');
     }
  
     create() {
-        this.scene.start('LevelScene');
+        this.scene.start('TypeScene');
         //this.scene.start('MainScene', {levelID:"001"});
     }
 };

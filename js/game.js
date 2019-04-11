@@ -6,6 +6,7 @@ var config = {
     pixelArt: true,
     scene: [
         BootScene,
+        TypeScene,
         LevelScene,
         MainScene,
     ]

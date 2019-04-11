@@ -43,6 +43,9 @@ class PopupScene extends Phaser.Scene {
         let inside_background_sprite = "inside_small";
 
         switch (this.getType()) {
+            case "type_locked":
+                inside_background_sprite = "inside_large";
+                break;
             case "level_locked":
                 inside_background_sprite = "inside_large";
                 break;
@@ -145,6 +148,28 @@ class PopupScene extends Phaser.Scene {
                 }
 
                 this.message.text = "Ce niveau est\nbarré !\n\nIl faut battre\nle niveau #"+levelID+"\npour pouvoir y\naccéder.";
+                button = new CustomButton(this, "Ok", "popup");
+                button.x = (background.width - button.getBounds().width) / 2;
+                button.y = (this.message.y * 2) + this.message.height + 30;
+                this.buttons.add(button);
+                this.popup_container.add(button);
+                break;
+            case "type_locked":
+            console.log(this.config.unlockData);
+                let typeID = "";
+                let limit = 0;
+                if (this.config.unlockData != undefined) {
+                    this.config.unlockData.forEach(single_unlock => {
+                        if (single_unlock.type == "reach") {
+                            typeID = single_unlock.typeID;
+                            limit = single_unlock.limit;
+                        }
+                    });
+                }
+
+                let type_name = this.cache.json.get("types").filter(single_type => single_type['id'] == typeID)[0]['name'];
+
+                this.message.text = "Ce niveau est\nbarré !\n\nIl faut battre\nau moins " + limit + "\nniveaux en\n"+ type_name +".";
                 button = new CustomButton(this, "Ok", "popup");
                 button.x = (background.width - button.getBounds().width) / 2;
                 button.y = (this.message.y * 2) + this.message.height + 30;

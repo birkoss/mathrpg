@@ -292,8 +292,7 @@ class MainScene extends Phaser.Scene {
 
             let stars = 0;
 
-            let max_total = (this.level.questions.length * 10) - this.enemy.max_health;
-
+            let max_total = (this.level.questions.length * 10);// - this.enemy.max_health;
             let current_total = (this.level.remainingQuestions() * 10) + this.attack_force;
 
             if (current_total >= max_total * .75) {
