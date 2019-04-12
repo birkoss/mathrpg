@@ -12,6 +12,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('popup:inside_large', 'assets/sprites/popup_inside_large.png');
 
         this.load.spritesheet('buttons', 'assets/sprites/buttons.png', { frameWidth: 250, frameHeight: 49 });
+        this.load.spritesheet('big_buttons', 'assets/sprites/big_buttons.png', { frameWidth: 190, frameHeight: 98 });
         this.load.spritesheet('long_buttons', 'assets/sprites/long_buttons.png', { frameWidth: 190, frameHeight: 49 });
         this.load.spritesheet('small_buttons', 'assets/sprites/small_buttons.png', { frameWidth: 45, frameHeight: 49 });
         this.load.spritesheet('units', 'assets/sprites/units.png', { frameWidth: 24, frameHeight: 24 });

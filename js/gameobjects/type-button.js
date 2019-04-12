@@ -14,12 +14,12 @@ class TypeButton extends Phaser.GameObjects.Container {
             this.isLocked = true;
         }
 
-        this.background = new Phaser.GameObjects.Sprite(scene, 0, 0, "long_buttons");
+        this.background = new Phaser.GameObjects.Sprite(scene, 0, 0, "big_buttons");
         this.background.setOrigin(0);
         this.add(this.background);
 
        //this.timer_text = this.add.bitmapText(0, 2, "font:gui", "", 20);
-        this.label = new Phaser.GameObjects.BitmapText(scene, this.background.width / 2, this.background.height / 2, "font:gui", buttonData['name'], 20);
+        this.label = new Phaser.GameObjects.BitmapText(scene, this.background.width / 2, 32, "font:gui", buttonData['name'], 20);
         this.label.setOrigin(0.5);
         this.label.tint = 0xd4d8e9;
         this.add(this.label);
@@ -67,7 +67,7 @@ class TypeButton extends Phaser.GameObjects.Container {
 
     onPointerDown() {
     	this.isPressed = true;
-    	this.background.setFrame(2);
+    	this.background.setFrame(1);
     }
 
     onPointerOut() {
