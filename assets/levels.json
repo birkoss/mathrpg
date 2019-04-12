@@ -721,10 +721,6 @@
 		"frames": [363, 381],
 		"health": 60
 	},
-	"unlock": [{
-		"type": "beat",
-		"levelID": "040"
-	}],
 	"questions": [{
 		"quantity": 10,
 		"first_operand_range": [2, 12],
@@ -1441,15 +1437,11 @@
 		"frames": [],
 		"health": 60
 	},
-	"unlock": [{
-		"type": "beat",
-		"levelID": "080"
-	}],
 	"questions": [{
 		"quantity": 10,
 		"first_operand_range": [1, 1],
 		"operator": "*",
-		"second_operand_range": [2, 12]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1467,7 +1459,7 @@
 		"quantity": 10,
 		"first_operand_range": [2, 2],
 		"operator": "*",
-		"second_operand_range": [3, 13]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1485,7 +1477,7 @@
 		"quantity": 10,
 		"first_operand_range": [3, 3],
 		"operator": "*",
-		"second_operand_range": [4, 14]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1503,7 +1495,7 @@
 		"quantity": 10,
 		"first_operand_range": [4, 4],
 		"operator": "*",
-		"second_operand_range": [5, 15]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1521,7 +1513,7 @@
 		"quantity": 10,
 		"first_operand_range": [5, 5],
 		"operator": "*",
-		"second_operand_range": [6, 16]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1539,7 +1531,7 @@
 		"quantity": 10,
 		"first_operand_range": [6, 6],
 		"operator": "*",
-		"second_operand_range": [7, 17]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1557,7 +1549,7 @@
 		"quantity": 10,
 		"first_operand_range": [7, 7],
 		"operator": "*",
-		"second_operand_range": [8, 18]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1575,7 +1567,7 @@
 		"quantity": 10,
 		"first_operand_range": [8, 8],
 		"operator": "*",
-		"second_operand_range": [9, 19]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1593,7 +1585,7 @@
 		"quantity": 10,
 		"first_operand_range": [9, 9],
 		"operator": "*",
-		"second_operand_range": [10, 20]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1611,7 +1603,7 @@
 		"quantity": 10,
 		"first_operand_range": [10, 10],
 		"operator": "*",
-		"second_operand_range": [11, 21]
+		"second_operand_range": [1, 12]
 	}],
 	"typeID": "multiplication"
 }, {
@@ -1621,17 +1613,23 @@
 		"frames": [],
 		"health": 60
 	},
-	"unlock": [{
-		"type": "beat",
-		"levelID": "090"
-	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [11, 11],
+		"quantity": 4,
+		"first_operand_range": [1, 1],
+		"operator": "+",
+		"second_operand_range": [1, 13]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [1, 1],
+		"operator": "-",
+		"second_operand_range": [1, 13]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [1, 1],
 		"operator": "*",
-		"second_operand_range": [12, 22]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "092",
 	"enemy": {
@@ -1644,12 +1642,22 @@
 		"levelID": "091"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [12, 12],
+		"quantity": 4,
+		"first_operand_range": [2, 2],
+		"operator": "+",
+		"second_operand_range": [2, 14]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [2, 2],
+		"operator": "-",
+		"second_operand_range": [2, 14]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [2, 2],
 		"operator": "*",
-		"second_operand_range": [13, 23]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "093",
 	"enemy": {
@@ -1662,12 +1670,22 @@
 		"levelID": "060"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [13, 13],
+		"quantity": 4,
+		"first_operand_range": [3, 3],
+		"operator": "+",
+		"second_operand_range": [3, 15]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [3, 3],
+		"operator": "-",
+		"second_operand_range": [3, 15]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [3, 3],
 		"operator": "*",
-		"second_operand_range": [14, 24]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "094",
 	"enemy": {
@@ -1680,12 +1698,22 @@
 		"levelID": "093"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [14, 14],
+		"quantity": 4,
+		"first_operand_range": [4, 4],
+		"operator": "+",
+		"second_operand_range": [4, 16]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [4, 4],
+		"operator": "-",
+		"second_operand_range": [4, 16]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [4, 4],
 		"operator": "*",
-		"second_operand_range": [15, 25]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "095",
 	"enemy": {
@@ -1698,12 +1726,22 @@
 		"levelID": "094"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [15, 15],
+		"quantity": 4,
+		"first_operand_range": [5, 5],
+		"operator": "+",
+		"second_operand_range": [5, 17]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [5, 5],
+		"operator": "-",
+		"second_operand_range": [5, 17]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [5, 5],
 		"operator": "*",
-		"second_operand_range": [16, 26]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "096",
 	"enemy": {
@@ -1716,12 +1754,22 @@
 		"levelID": "095"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [16, 16],
+		"quantity": 4,
+		"first_operand_range": [6, 6],
+		"operator": "+",
+		"second_operand_range": [6, 18]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [6, 6],
+		"operator": "-",
+		"second_operand_range": [6, 18]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [6, 6],
 		"operator": "*",
-		"second_operand_range": [17, 27]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "097",
 	"enemy": {
@@ -1734,12 +1782,22 @@
 		"levelID": "096"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [17, 17],
+		"quantity": 4,
+		"first_operand_range": [7, 7],
+		"operator": "+",
+		"second_operand_range": [7, 19]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [7, 7],
+		"operator": "-",
+		"second_operand_range": [7, 19]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [7, 7],
 		"operator": "*",
-		"second_operand_range": [18, 28]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "098",
 	"enemy": {
@@ -1752,12 +1810,22 @@
 		"levelID": "097"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [18, 18],
+		"quantity": 4,
+		"first_operand_range": [8, 8],
+		"operator": "+",
+		"second_operand_range": [8, 20]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [8, 8],
+		"operator": "-",
+		"second_operand_range": [8, 20]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [8, 8],
 		"operator": "*",
-		"second_operand_range": [19, 29]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "099",
 	"enemy": {
@@ -1770,12 +1838,22 @@
 		"levelID": "098"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [19, 19],
+		"quantity": 4,
+		"first_operand_range": [9, 9],
+		"operator": "+",
+		"second_operand_range": [9, 21]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [9, 9],
+		"operator": "-",
+		"second_operand_range": [9, 21]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [9, 9],
 		"operator": "*",
-		"second_operand_range": [20, 30]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "100",
 	"enemy": {
@@ -1788,12 +1866,22 @@
 		"levelID": "099"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [20, 20],
+		"quantity": 4,
+		"first_operand_range": [10, 10],
+		"operator": "+",
+		"second_operand_range": [10, 22]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [10, 10],
+		"operator": "-",
+		"second_operand_range": [10, 22]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [10, 10],
 		"operator": "*",
-		"second_operand_range": [21, 31]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "101",
 	"enemy": {
@@ -1806,12 +1894,22 @@
 		"levelID": "100"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [21, 21],
+		"quantity": 4,
+		"first_operand_range": [11, 11],
+		"operator": "+",
+		"second_operand_range": [11, 23]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [11, 11],
+		"operator": "-",
+		"second_operand_range": [11, 23]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [1, 1],
 		"operator": "*",
-		"second_operand_range": [22, 43]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "102",
 	"enemy": {
@@ -1824,12 +1922,22 @@
 		"levelID": "101"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [22, 22],
+		"quantity": 4,
+		"first_operand_range": [12, 12],
+		"operator": "+",
+		"second_operand_range": [12, 24]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [12, 12],
+		"operator": "-",
+		"second_operand_range": [12, 24]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [2, 2],
 		"operator": "*",
-		"second_operand_range": [23, 44]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "103",
 	"enemy": {
@@ -1842,12 +1950,22 @@
 		"levelID": "102"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [23, 23],
+		"quantity": 4,
+		"first_operand_range": [13, 13],
+		"operator": "+",
+		"second_operand_range": [13, 25]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [13, 13],
+		"operator": "-",
+		"second_operand_range": [13, 25]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [3, 3],
 		"operator": "*",
-		"second_operand_range": [24, 45]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "104",
 	"enemy": {
@@ -1860,12 +1978,22 @@
 		"levelID": "103"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [24, 24],
+		"quantity": 4,
+		"first_operand_range": [14, 14],
+		"operator": "+",
+		"second_operand_range": [14, 26]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [14, 14],
+		"operator": "-",
+		"second_operand_range": [14, 26]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [4, 4],
 		"operator": "*",
-		"second_operand_range": [25, 46]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "105",
 	"enemy": {
@@ -1878,12 +2006,22 @@
 		"levelID": "104"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [25, 25],
+		"quantity": 4,
+		"first_operand_range": [15, 15],
+		"operator": "+",
+		"second_operand_range": [15, 27]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [15, 15],
+		"operator": "-",
+		"second_operand_range": [15, 27]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [5, 5],
 		"operator": "*",
-		"second_operand_range": [26, 47]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "106",
 	"enemy": {
@@ -1896,12 +2034,22 @@
 		"levelID": "105"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [26, 26],
+		"quantity": 4,
+		"first_operand_range": [16, 16],
+		"operator": "+",
+		"second_operand_range": [16, 28]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [16, 16],
+		"operator": "-",
+		"second_operand_range": [16, 28]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [6, 6],
 		"operator": "*",
-		"second_operand_range": [27, 48]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "107",
 	"enemy": {
@@ -1914,12 +2062,22 @@
 		"levelID": "106"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [27, 27],
+		"quantity": 4,
+		"first_operand_range": [17, 17],
+		"operator": "+",
+		"second_operand_range": [17, 29]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [17, 17],
+		"operator": "-",
+		"second_operand_range": [17, 29]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [7, 7],
 		"operator": "*",
-		"second_operand_range": [28, 49]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "108",
 	"enemy": {
@@ -1932,12 +2090,22 @@
 		"levelID": "107"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [28, 28],
+		"quantity": 4,
+		"first_operand_range": [18, 18],
+		"operator": "+",
+		"second_operand_range": [18, 30]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [18, 18],
+		"operator": "-",
+		"second_operand_range": [18, 30]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [8, 8],
 		"operator": "*",
-		"second_operand_range": [29, 50]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "109",
 	"enemy": {
@@ -1950,12 +2118,22 @@
 		"levelID": "108"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [29, 29],
+		"quantity": 4,
+		"first_operand_range": [19, 19],
+		"operator": "+",
+		"second_operand_range": [19, 31]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [19, 19],
+		"operator": "-",
+		"second_operand_range": [19, 31]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [9, 9],
 		"operator": "*",
-		"second_operand_range": [30, 51]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "110",
 	"enemy": {
@@ -1968,12 +2146,22 @@
 		"levelID": "109"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [30, 30],
+		"quantity": 4,
+		"first_operand_range": [20, 20],
+		"operator": "+",
+		"second_operand_range": [20, 32]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [20, 20],
+		"operator": "-",
+		"second_operand_range": [20, 32]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [10, 10],
 		"operator": "*",
-		"second_operand_range": [31, 52]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "111",
 	"enemy": {
@@ -1986,12 +2174,22 @@
 		"levelID": "110"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [31, 31],
+		"quantity": 4,
+		"first_operand_range": [21, 21],
+		"operator": "+",
+		"second_operand_range": [21, 33]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [21, 21],
+		"operator": "-",
+		"second_operand_range": [21, 33]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [1, 1],
 		"operator": "*",
-		"second_operand_range": [32, 53]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "112",
 	"enemy": {
@@ -2004,12 +2202,22 @@
 		"levelID": "111"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [32, 32],
+		"quantity": 4,
+		"first_operand_range": [22, 22],
+		"operator": "+",
+		"second_operand_range": [22, 34]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [22, 22],
+		"operator": "-",
+		"second_operand_range": [22, 34]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [2, 2],
 		"operator": "*",
-		"second_operand_range": [33, 54]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "113",
 	"enemy": {
@@ -2022,12 +2230,22 @@
 		"levelID": "112"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [33, 33],
+		"quantity": 4,
+		"first_operand_range": [23, 23],
+		"operator": "+",
+		"second_operand_range": [23, 35]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [23, 23],
+		"operator": "-",
+		"second_operand_range": [23, 35]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [3, 3],
 		"operator": "*",
-		"second_operand_range": [34, 55]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "114",
 	"enemy": {
@@ -2040,12 +2258,22 @@
 		"levelID": "113"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [34, 34],
+		"quantity": 4,
+		"first_operand_range": [24, 24],
+		"operator": "+",
+		"second_operand_range": [24, 36]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [24, 24],
+		"operator": "-",
+		"second_operand_range": [24, 36]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [4, 4],
 		"operator": "*",
-		"second_operand_range": [35, 56]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "115",
 	"enemy": {
@@ -2058,12 +2286,22 @@
 		"levelID": "114"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [35, 35],
+		"quantity": 4,
+		"first_operand_range": [25, 25],
+		"operator": "+",
+		"second_operand_range": [25, 37]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [25, 25],
+		"operator": "-",
+		"second_operand_range": [25, 37]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [5, 5],
 		"operator": "*",
-		"second_operand_range": [36, 57]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "116",
 	"enemy": {
@@ -2076,12 +2314,22 @@
 		"levelID": "115"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [36, 36],
+		"quantity": 4,
+		"first_operand_range": [26, 26],
+		"operator": "+",
+		"second_operand_range": [26, 38]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [26, 26],
+		"operator": "-",
+		"second_operand_range": [26, 38]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [6, 6],
 		"operator": "*",
-		"second_operand_range": [37, 58]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "117",
 	"enemy": {
@@ -2094,12 +2342,22 @@
 		"levelID": "116"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [37, 37],
+		"quantity": 4,
+		"first_operand_range": [27, 27],
+		"operator": "+",
+		"second_operand_range": [27, 39]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [27, 27],
+		"operator": "-",
+		"second_operand_range": [27, 39]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [7, 7],
 		"operator": "*",
-		"second_operand_range": [38, 59]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "118",
 	"enemy": {
@@ -2112,12 +2370,22 @@
 		"levelID": "117"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [38, 38],
+		"quantity": 4,
+		"first_operand_range": [28, 28],
+		"operator": "+",
+		"second_operand_range": [28, 40]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [28, 28],
+		"operator": "-",
+		"second_operand_range": [28, 40]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [8, 8],
 		"operator": "*",
-		"second_operand_range": [39, 60]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "119",
 	"enemy": {
@@ -2130,12 +2398,22 @@
 		"levelID": "118"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [39, 39],
+		"quantity": 4,
+		"first_operand_range": [29, 29],
+		"operator": "+",
+		"second_operand_range": [29, 41]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [29, 29],
+		"operator": "-",
+		"second_operand_range": [29, 41]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [9, 9],
 		"operator": "*",
-		"second_operand_range": [40, 61]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }, {
 	"id": "120",
 	"enemy": {
@@ -2148,10 +2426,20 @@
 		"levelID": "119"
 	}],
 	"questions": [{
-		"quantity": 10,
-		"first_operand_range": [40, 40],
+		"quantity": 4,
+		"first_operand_range": [30, 30],
+		"operator": "+",
+		"second_operand_range": [30, 42]
+	}, {
+		"quantity": 4,
+		"first_operand_range": [30, 30],
+		"operator": "-",
+		"second_operand_range": [30, 42]
+	}, {
+		"quantity": 2,
+		"first_operand_range": [10, 10],
 		"operator": "*",
-		"second_operand_range": [41, 62]
+		"second_operand_range": [1, 12]
 	}],
-	"typeID": "multiplication"
+	"typeID": "mixte"
 }]

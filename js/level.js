@@ -19,6 +19,9 @@ class Level {
 				};
 
 				switch (question.operator) {
+					case "*":
+						question.answer = question.first_operand * question.second_operand;
+						break;
 					case "+":
 						question.answer = question.first_operand + question.second_operand;
 						break;

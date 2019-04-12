@@ -2,11 +2,13 @@
 	{
 		"id": "addition",
 		"name": "Additions",
+		"symbol": "+",
 		"template": "forest"
 	},
 	{
 		"id": "substraction",
 		"name": "Soustractions",
+		"symbol": "-",
 		"template": "forest",
 		"unlock": [
 			{
@@ -19,12 +21,26 @@
 	{
 		"id": "multiplication",
 		"name": "Multiplications",
+		"symbol": "x",
 		"template": "forest",
 		"unlock": [
 			{
 				"type": "reach",
 				"typeID": "substration",
 				"limit": 10
+			}
+		]
+	},
+	{
+		"id": "mixte",
+		"name": "Mixte",
+		"symbol": "+ - x",
+		"template": "forest",
+		"unlock": [
+			{
+				"type": "reach",
+				"typeID": "multiplication",
+				"limit": 5
 			}
 		]
 	}
