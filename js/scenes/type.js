@@ -16,7 +16,7 @@ class TypeScene extends Phaser.Scene {
         let savegame = this.game.load();
 
         this.cache.json.get("types").forEach(single_type => {
-            let current = 0;
+            let current = this.cache.json.get("levels").filter(single_level => (single_level['typeID'] == single_type['id'] && savegame.levels[single_level['id']] != undefined)).length;
             let total = this.cache.json.get("levels").filter(single_level => single_level['typeID'] == single_type['id']).length;
             let button = new TypeButton(this, single_type, current, total);
             button.x = (this.game.config.width - button.getBounds().width) / 2;

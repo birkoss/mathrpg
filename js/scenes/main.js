@@ -118,7 +118,7 @@ class MainScene extends Phaser.Scene {
         this.live_text = this.add.bitmapText(this.panel_container.getBounds().x + 178, this.panel_container.getBounds().height - 52, "font:gui", "10", 30).setOrigin(0, 0);
         this.panel_container.add(this.live_text);
 
-        let button = new IconButton(this, "items", 10);
+        let button = new IconButton(this, "items", 132);
         button.x = this.panel_container.getBounds().width - button.getBounds().width - 10;
         button.y = this.panel_container.getBounds().height - button.getBounds().height - 10;
         this.panel_container.add(button);
